@@ -1,16 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Oscar y Carolina · Bodas de Plata</title>
-<meta name="description" content="Te invitamos a celebrar nuestros 25 años de matrimonio. 13 de diciembre, Finca Villa Lolita.">
-<meta property="og:title" content="Oscar y Carolina · Bodas de Plata">
-<meta property="og:image" content="img/portada-1.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
-<!--
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Oscar y Carolina · Bodas de Plata</title>
+    <meta
+      name="description"
+      content="Te invitamos a celebrar nuestros 25 años de matrimonio. 13 de diciembre, Finca Villa Lolita."
+    />
+    <meta property="og:title" content="Oscar y Carolina · Bodas de Plata" />
+    <meta property="og:image" content="img/portada-1.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Figtree:wght@300;400;500&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <!--
   VERSIÓN 1 · "Plata y niebla"  (Bodoni Moda + Figtree, fondo perla, composición editorial a la izquierda)
 
   CÓMO EDITAR
@@ -20,331 +29,1673 @@
   4. Fotos .............. carpeta img/ (portada-1, portada-2 y album-1…7)
   Para publicar: renombra este archivo a index.html y sube la carpeta completa.
 -->
-<style>
-/* ---------- Variables ---------- */
-:root{--bg:#e8ebe8;--card:#f6f7f5;--ink:#252a20;--silver:#8e9598;--line:#c3c8c6;--olive:#6b7140;--brown:#5a4332;
---serif:'Bodoni Moda',Georgia,serif;--sans:'Figtree',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:300 1.0625rem/1.75 var(--sans);overflow-x:hidden}
-body.lock{overflow:hidden;height:100svh}
-img{display:block;max-width:100%}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
-:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
-section{max-width:1040px;margin:auto;padding:clamp(4.5rem,11vw,8rem) 1.5rem}
-.lbl{font:italic 400 1.1rem var(--serif);color:var(--silver)}
-.btn{display:inline-block;margin-top:1.4rem;padding:.95rem 2rem;border:1px solid var(--ink);color:var(--ink);background:none;
-font:400 .95rem var(--sans);letter-spacing:.08em;text-decoration:none;cursor:pointer;transition:background .4s,color .4s}
-.btn:hover{background:var(--ink);color:var(--bg)}
+    <style>
+      /* ---------- Variables ---------- */
+      :root {
+        --bg: #f0ecdd;
+        --card: #faf8f1;
+        --ink: #252a20;
+        --silver: #9a977f;
+        --line: #d6cfb8;
+        --olive: #6b7140;
+        --brown: #5a4332;
+        --serif: "Bodoni Moda", Georgia, serif;
+        --script: "Great Vibes", "Brush Script MT", cursive;
+        --sans: "Figtree", system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        position: relative;
+        background: var(--bg);
+        color: var(--ink);
+        font: 300 1.0625rem/1.75 var(--sans);
+        overflow-x: hidden;
+      }
+      body.lock {
+        overflow: hidden;
+        height: 100svh;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        line-height: 1.05;
+      }
+      :focus-visible {
+        outline: 2px solid var(--olive);
+        outline-offset: 3px;
+      }
+      section {
+        max-width: 1040px;
+        margin: auto;
+        padding: clamp(4.5rem, 11vw, 8rem) 1.5rem;
+      }
+      .lbl {
+        font: italic 400 1.1rem var(--serif);
+        color: var(--silver);
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 1.4rem;
+        padding: 0.95rem 2rem;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        background: none;
+        font: 400 0.95rem var(--sans);
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          background 0.4s,
+          color 0.4s;
+      }
+      .btn:hover {
+        background: var(--ink);
+        color: var(--bg);
+      }
 
-/* ---------- Portada: sobre azul marino con sello dorado ---------- */
-#cover{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;
-background:radial-gradient(circle at 50% 38%,#faf6ec,#dfe2de 72%);transition:opacity 1.1s ease}
-#cover.fin{opacity:0;pointer-events:none}
-.stage{width:min(88vw,520px)}
-.env{position:relative;aspect-ratio:3/2;perspective:900px;filter:drop-shadow(0 22px 28px rgba(27,37,64,.35))}
-.env>*{position:absolute}
-.back{inset:0;background:#162039}
-.card{left:6%;right:6%;top:8%;height:86%;z-index:2;background:#17203a;border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;
-padding-top:1.5rem;color:var(--gold2);transition:transform 1.3s cubic-bezier(.65,0,.25,1)}
-.card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(217,191,132,.5)}
-.card i{font:italic 400 1.05rem var(--serif)}
-.card b{font:400 clamp(1.7rem,7vw,2.5rem)/1.1 var(--serif);margin:.5rem 0;background:linear-gradient(100deg,#c99f52,#f3e0a8 50%,#b88a3e);
--webkit-background-clip:text;background-clip:text;color:transparent}
-.card hr{border:0;width:55%;height:1px;margin:.3rem 0 .6rem;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
-.front{inset:0;z-index:3;background:linear-gradient(160deg,#26345a,#18213a);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
-.flap{left:0;right:0;top:0;height:54%;z-index:4;background:linear-gradient(180deg,#34456f,#243255);clip-path:polygon(0 0,100% 0,50% 100%);
-transform-origin:top;transition:transform 1s cubic-bezier(.5,0,.2,1),z-index 0s .5s}
-.wax{left:50%;top:54%;z-index:6;translate:-50% -50%;width:78px;aspect-ratio:1;border-radius:50%;border:0;cursor:pointer;
-background:radial-gradient(circle at 35% 30%,#f6e4ae,#c79d50 55%,#8c6a2d);box-shadow:0 4px 10px rgba(0,0,0,.4),inset 0 0 0 5px rgba(255,255,255,.15);
-font:italic 400 1.35rem var(--serif);color:#6b4d1b;animation:ring 2.4s infinite;transition:opacity .5s,scale .5s}
-@keyframes ring{from{box-shadow:0 4px 10px rgba(0,0,0,.4),0 0 0 0 rgba(217,191,132,.75)}to{box-shadow:0 4px 10px rgba(0,0,0,.4),0 0 0 22px rgba(217,191,132,0)}}
-.tip{margin-top:2.2rem;transition:opacity .5s}
-#cover.open .wax{opacity:0;scale:.5;animation:none;pointer-events:none}
-#cover.open .tip{opacity:0}
-#cover.open .flap{transform:rotateX(180deg);z-index:1}   /* la solapa se abre y queda detrás de la carta */
-#cover.out .card{transform:translateY(-62%)}              /* la carta sale del sobre */
+      /* ---------- Fondo decorativo: ondas y follaje botánico ---------- */
+      .ambient {
+        position: absolute;
+        inset: 0 0 auto;
+        height: clamp(250px, 34vw, 490px);
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .ambient-wave {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .ambient-botanical {
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        translate: -50% 0;
+        width: min(440px, 74vw);
+        height: auto;
+        opacity: 0.53;
+        filter: drop-shadow(0 2px 1px rgba(120, 94, 50, 0.04));
+      }
+      .top-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #783d45, #a77b60 48%, #783d45);
+        z-index: 2;
+        pointer-events: none;
+      }
+      main,
+      .rsvp,
+      footer {
+        position: relative;
+        z-index: 1;
+      }
+      @media (max-width: 600px) {
+        .ambient {
+          height: 245px;
+        }
+        .ambient-wave {
+          height: 220px;
+        }
+        .ambient-botanical {
+          width: min(340px, 88vw);
+          opacity: 0.42;
+        }
+      }
 
-/* ---------- Encabezado ---------- */
-.hero{display:grid;gap:3.5rem;align-items:center;min-height:100svh}
-@media(min-width:860px){.hero{grid-template-columns:1.1fr .9fr}}
-.hero h1{font-size:clamp(3.4rem,11vw,6.6rem);margin:.8rem 0 1.8rem;letter-spacing:-.02em}
-.hero p{font:400 1.18rem/1.85 var(--serif);max-width:36rem;color:#3b4135}
-.arch{position:relative;justify-self:center;width:min(100%,380px)}
-.arch .main{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:999px 999px 0 0}
-.arch .mini{position:absolute;left:-12%;bottom:-7%;width:44%;aspect-ratio:1;object-fit:cover;object-position:50% 30%;border-radius:50%;border:7px solid var(--bg)}
-.arch figcaption{position:absolute;right:-1rem;top:42%;writing-mode:vertical-rl;color:var(--silver);font:italic 1rem var(--serif)}
-/* Un solo momento animado: al abrir la carta, el encabezado entra */
-.hero>*{opacity:0;transition:opacity 1.4s ease .5s}
-body.open .hero>*{opacity:1}
+      /* ---------- Portada: fajilla de papel oliva, cordón y sello de lacre ---------- */
+      #cover {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: radial-gradient(
+          ellipse at 50% 38%,
+          #fbf8ee 0%,
+          #e9e5d5 58%,
+          #d9d7c4 100%
+        );
+        transition: opacity 1.1s ease;
+      }
+      #cover.fin {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .stage {
+        width: min(88vw, 520px);
+      }
+      .env {
+        position: relative;
+        aspect-ratio: 3/2;
+        perspective: 1100px;
+        isolation: isolate;
+        filter: drop-shadow(0 25px 27px rgba(47, 52, 22, 0.28));
+      }
+      .env > * {
+        position: absolute;
+      }
+      .back {
+        inset: 0;
+        background: linear-gradient(140deg, #f7f3e7, #e8e1cf);
+        border: 1px solid rgba(169, 130, 64, 0.38);
+      }
+      .card {
+        left: 6%;
+        right: 6%;
+        top: 8%;
+        height: 86%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1.5rem;
+        background: linear-gradient(#fbf8ee, #efe9d2);
+        border: 1px solid var(--gold);
+        color: #8a6628;
+        transition:
+          transform 1.3s cubic-bezier(0.65, 0, 0.25, 1),
+          z-index 0s 0.35s;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border: 1px solid var(--gold2);
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 11px;
+        border: 1px solid rgba(169, 130, 64, 0.35);
+      }
+      .card i {
+        font: italic 400 1.1rem var(--serif);
+      }
+      .card b {
+        font: italic 400 clamp(1.9rem, 7.5vw, 2.7rem)/1.1 var(--serif);
+        margin: 0.4rem 0 0.2rem;
+        color: #4d5329;
+      }
+      .card svg {
+        width: 96px;
+        margin: 0.2rem 0 0.3rem;
+        stroke: var(--gold);
+        fill: var(--gold);
+      }
+      /* La pieza oliva cubre parcialmente la tarjeta, como una funda de papelería fina. */
+      .front {
+        inset: 0;
+        z-index: 3;
+        opacity: 1;
+        background: linear-gradient(
+          138deg,
+          #788044 0%,
+          #5d6734 45%,
+          #414923 100%
+        );
+        clip-path: polygon(0 0, 68% 0, 68% 100%, 0 100%);
+        transition:
+          opacity 0.75s ease,
+          transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .front::before {
+        content: "";
+        position: absolute;
+        inset: 8px 32% 8px 8px;
+        border: 1px solid rgba(225, 207, 155, 0.26);
+      }
+      .front::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 5.5%;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+      }
+      .wrap-band {
+        inset: 0 auto 0 39%;
+        z-index: 4;
+        width: 25%;
+        background: linear-gradient(
+          90deg,
+          rgba(43, 51, 24, 0.18),
+          rgba(150, 153, 91, 0.28) 18%,
+          rgba(101, 111, 57, 0.2) 78%,
+          rgba(37, 44, 21, 0.18)
+        );
+        border-inline: 1px solid rgba(226, 211, 169, 0.22);
+        box-shadow: 0 0 13px rgba(26, 32, 15, 0.13);
+        transition:
+          opacity 0.55s ease,
+          transform 0.8s ease;
+      }
+      .cord {
+        inset: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: opacity 0.45s ease;
+      }
+      .cord::before {
+        content: "";
+        position: absolute;
+        left: -2%;
+        right: -2%;
+        top: 57%;
+        height: 3px;
+        background: linear-gradient(180deg, #e6d5a8, #a98c55 48%, #f0e2bd);
+        box-shadow: 0 1px 2px rgba(44, 37, 20, 0.35);
+      }
+      .cord::after {
+        content: "";
+        position: absolute;
+        top: -2%;
+        bottom: -2%;
+        left: 51%;
+        width: 2px;
+        background: linear-gradient(90deg, #a98c55, #f0e2bd 55%, #b69a62);
+        opacity: 0.9;
+      }
+      .botanical {
+        z-index: 5;
+        left: 5%;
+        top: 3%;
+        width: 35%;
+        height: auto;
+        overflow: visible;
+        filter: drop-shadow(0 2px 2px rgba(20, 25, 12, 0.18));
+        transition:
+          opacity 0.5s ease,
+          transform 0.7s ease;
+      }
+      .botanical .stem {
+        fill: none;
+        stroke: #ded6b6;
+        stroke-width: 1.25;
+        stroke-linecap: round;
+      }
+      .botanical .leaf {
+        fill: #d9d1b2;
+        stroke: #b9b18f;
+        stroke-width: 0.65;
+      }
+      .botanical .flower {
+        fill: #f5f0df;
+        stroke: #d1c8a8;
+        stroke-width: 0.55;
+      }
+      .wax {
+        left: 51%;
+        top: 57%;
+        z-index: 7;
+        translate: -50% -50%;
+        width: 76px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid #8f672f;
+        cursor: pointer;
+        background: radial-gradient(
+          circle at 31% 25%,
+          #e9c987 0%,
+          #c39a53 42%,
+          #91662e 78%,
+          #755025 100%
+        );
+        box-shadow:
+          0 5px 9px rgba(0, 0, 0, 0.28),
+          inset 0 2px 4px rgba(255, 244, 207, 0.52),
+          inset 0 -4px 7px rgba(76, 49, 18, 0.28);
+        font: 400 1.55rem/1 var(--script);
+        color: #71501f;
+        text-shadow: 0 1px 1px rgba(255, 233, 177, 0.58);
+        animation: ring 2.6s infinite;
+        transition:
+          opacity 0.45s,
+          scale 0.45s,
+          transform 0.45s;
+      }
+      .wax::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border-radius: 50%;
+        border: 1px solid rgba(102, 69, 28, 0.52);
+        box-shadow: inset 0 0 0 2px rgba(255, 229, 168, 0.14);
+      }
+      .wax::after {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border-radius: 50%;
+        border: 1px dotted rgba(91, 61, 27, 0.5);
+      }
+      @keyframes ring {
+        from {
+          box-shadow:
+            0 5px 9px rgba(0, 0, 0, 0.28),
+            0 0 0 0 rgba(217, 191, 132, 0.62),
+            inset 0 2px 4px rgba(255, 244, 207, 0.52);
+        }
+        to {
+          box-shadow:
+            0 5px 9px rgba(0, 0, 0, 0.28),
+            0 0 0 19px rgba(217, 191, 132, 0),
+            inset 0 2px 4px rgba(255, 244, 207, 0.52);
+        }
+      }
+      .tip {
+        margin-top: 1.8rem;
+        transition: opacity 0.5s;
+      }
+      #cover.open .wax {
+        opacity: 0;
+        scale: 0.5;
+        animation: none;
+        pointer-events: none;
+      }
+      #cover.open .front {
+        opacity: 0;
+        transform: translateX(-3%);
+      }
+      #cover.open .wrap-band,
+      #cover.open .cord,
+      #cover.open .botanical {
+        opacity: 0;
+      }
+      #cover.open .botanical {
+        transform: translateY(-12px);
+      }
+      #cover.open .tip {
+        opacity: 0;
+      }
+      #cover.out .card {
+        transform: translateY(-62%);
+        z-index: 8;
+      }
+      /* ---------- Encabezado ---------- */
+      .hero {
+        display: grid;
+        gap: 3.5rem;
+        align-items: center;
+        min-height: 100svh;
+      }
+      @media (min-width: 860px) {
+        .hero {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(3.4rem, 11vw, 6.6rem);
+        margin: 0.8rem 0 1.8rem;
+        letter-spacing: -0.02em;
+      }
+      .hero p {
+        font: 400 1.18rem/1.85 var(--serif);
+        max-width: 36rem;
+        color: #3b4135;
+      }
+      .arch {
+        position: relative;
+        justify-self: center;
+        width: min(100%, 380px);
+      }
+      .arch .main {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        object-position: 50% 20%;
+        border-radius: 999px 999px 0 0;
+      }
+      .arch .mini {
+        position: absolute;
+        left: -12%;
+        bottom: -7%;
+        width: 44%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: 50% 30%;
+        border-radius: 50%;
+        border: 7px solid var(--bg);
+      }
+      .arch figcaption {
+        position: absolute;
+        right: -1rem;
+        top: 42%;
+        writing-mode: vertical-rl;
+        color: var(--silver);
+        font: italic 1rem var(--serif);
+      }
+      /* Un solo momento animado: al abrir la carta, el encabezado entra */
+      .hero > * {
+        opacity: 0;
+        transition: opacity 1.4s ease 0.5s;
+      }
+      body.open .hero > * {
+        opacity: 1;
+      }
 
-/* ---------- Ceremonia ---------- */
-.cd{display:grid;grid-template-columns:repeat(4,1fr);margin:2.5rem 0 3.5rem;border-block:1px solid var(--line)}
-.cd div{padding:1.6rem 0;text-align:center;border-left:1px solid var(--line)}
-.cd div:first-child{border:0}
-.cd b{display:block;font:400 clamp(2.4rem,9vw,4.6rem)/1 var(--serif)}
-.cd span{font-size:.9rem;color:var(--silver)}
-.info{display:grid;gap:2.5rem}
-@media(min-width:760px){.info{grid-template-columns:repeat(3,1fr)}}
-.info h3{font-size:2rem;margin:.3rem 0}
-.info .t{font:italic 400 1.15rem var(--serif);color:var(--olive)}
+      /* ---------- Ceremonia ---------- */
+      .cd {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 2.5rem 0 3.5rem;
+        border-block: 1px solid var(--line);
+      }
+      .cd div {
+        padding: 1.6rem 0;
+        text-align: center;
+        border-left: 1px solid var(--line);
+      }
+      .cd div:first-child {
+        border: 0;
+      }
+      .cd b {
+        display: block;
+        font: 400 clamp(2.4rem, 9vw, 4.6rem)/1 var(--serif);
+      }
+      .cd span {
+        font-size: 0.9rem;
+        color: var(--silver);
+      }
+      .info {
+        display: grid;
+        gap: 2.5rem;
+      }
+      @media (min-width: 760px) {
+        .info {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .info h3 {
+        font-size: 2rem;
+        margin: 0.3rem 0;
+      }
+      .info .t {
+        font: italic 400 1.15rem var(--serif);
+        color: var(--olive);
+      }
 
-/* ---------- Slider (fundido) ---------- */
-.sld{position:relative;max-width:500px;aspect-ratio:4/5;margin:2.5rem auto 0;overflow:hidden;background:var(--line)}
-.sl{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 6s ease}
-.sl.on{opacity:1;transform:none}
-.arw{position:absolute;top:50%;translate:0 -50%;width:44px;height:44px;border:0;border-radius:50%;background:rgba(246,247,245,.85);font-size:1.3rem;cursor:pointer}
-#prev{left:.8rem}#next{right:.8rem}
-#dots{display:flex;justify-content:center;gap:.6rem;margin-top:1.2rem}
-#dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--ink);background:none;cursor:pointer;padding:0}
-#dots .on{background:var(--ink)}
+      /* ---------- Slider (fundido) ---------- */
+      .sld {
+        position: relative;
+        max-width: 500px;
+        aspect-ratio: 4/5;
+        margin: 2.5rem auto 0;
+        overflow: hidden;
+        background: var(--line);
+      }
+      .sl {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.06);
+        transition:
+          opacity 1.2s ease,
+          transform 6s ease;
+      }
+      .sl.on {
+        opacity: 1;
+        transform: none;
+      }
+      .arw {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(246, 247, 245, 0.85);
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+      #prev {
+        left: 0.8rem;
+      }
+      #next {
+        right: 0.8rem;
+      }
+      #dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        margin-top: 1.2rem;
+      }
+      #dots button {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        border: 1px solid var(--ink);
+        background: none;
+        cursor: pointer;
+        padding: 0;
+      }
+      #dots .on {
+        background: var(--ink);
+      }
 
-/* ---------- Dress code ---------- */
-.dc{display:grid;gap:2.5rem;margin-top:2.5rem}
-@media(min-width:760px){.dc{grid-template-columns:1fr 1fr}}
-.dc div{background:var(--card);padding:2rem}
-.dc h3{font-size:1.8rem;margin-bottom:.5rem}
-.res{margin-top:2.5rem;text-align:center}
-.sw{display:flex;justify-content:center;gap:1.6rem;margin:1.2rem 0 .8rem}
-.sw i{width:64px;height:64px;border-radius:50%;border:1px solid var(--line)}
+      /* ---------- Dress code ---------- */
+      .dc {
+        display: grid;
+        gap: 2.5rem;
+        margin-top: 2.5rem;
+      }
+      @media (min-width: 760px) {
+        .dc {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .dc div {
+        background: var(--card);
+        padding: 2rem;
+      }
+      .dc h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+      .res {
+        margin-top: 2.5rem;
+        text-align: center;
+      }
+      .sw {
+        display: flex;
+        justify-content: center;
+        gap: 1.6rem;
+        margin: 1.2rem 0 0.8rem;
+      }
+      .sw i {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+      }
 
-/* ---------- Confirmación ---------- */
-.rsvp{text-align:center;border:1px solid var(--silver);margin:0 1.5rem 3rem;padding:clamp(3rem,8vw,5rem) 1.5rem}
-.rsvp h2{font-size:clamp(2.2rem,7vw,3.6rem);margin:.5rem 0 1rem}
-footer{text-align:center;padding:2rem 1.5rem 4.5rem;font:italic 1.2rem var(--serif);color:var(--silver)}
+      /* ---------- Confirmación ---------- */
+      .rsvp {
+        text-align: center;
+        border: 1px solid var(--silver);
+        margin: 0 1.5rem 3rem;
+        padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+      }
+      .rsvp h2 {
+        font-size: clamp(2.2rem, 7vw, 3.6rem);
+        margin: 0.5rem 0 1rem;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem 1.5rem 4.5rem;
+        font: italic 1.2rem var(--serif);
+        color: var(--silver);
+      }
 
-/* ---------- Botón de música ---------- */
-#mus{position:fixed;right:1rem;bottom:1rem;z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);background:var(--card);
-font-size:1.2rem;cursor:pointer;opacity:.5;transition:opacity .3s}
-#mus.on{opacity:1}
-#mus[hidden]{display:none}
-/* ---------- Paleta cálida: dorado y marrón claro ---------- */
-:root{--gold:#a98240;--gold2:#d9bf84;--sand:#efe6d4;--tan:#a9805d;--navy:#1b2540}
-.lbl{color:var(--gold)}
-.btn{border-color:var(--gold);color:var(--navy)}
-.btn:hover{background:var(--navy);color:var(--gold2);border-color:var(--navy)}
-.hero h1{background:linear-gradient(100deg,#7d5c26,#c9a45a 45%,#8a6628);-webkit-background-clip:text;background-clip:text;color:transparent}
-.arch .main{outline:1px solid var(--gold);outline-offset:10px;cursor:zoom-in}
-.arch .mini{border-color:var(--sand);box-shadow:0 0 0 1px var(--gold);cursor:zoom-in}
-.arch figcaption,.cd span,.info .t,.hint{color:var(--tan)}
-#ceremonia,#vestimenta{background:var(--sand);box-shadow:0 0 0 100vmax var(--sand);clip-path:inset(0 -100vmax)}
-.cd,.cd div{border-color:var(--gold2)}
-.cd b{color:var(--gold)}
-.sld{outline:1px solid var(--gold);outline-offset:10px;cursor:zoom-in}
-.sl{pointer-events:none}
-#dots button{border-color:var(--gold)}#dots .on{background:var(--gold)}
-.hint{text-align:center;font-size:.9rem;margin-top:.6rem}
-.dc div{border-top:2px solid var(--gold)}
-.dc h3{color:var(--gold)}
-.rsvp{background:var(--navy);border-color:var(--gold);outline:1px solid var(--gold2);outline-offset:-10px;color:#efe6cf}
-.rsvp .lbl,.rsvp h2{color:var(--gold2)}
-.rsvp .btn{border-color:var(--gold2);color:var(--gold2)}
-.rsvp .btn:hover{background:var(--gold2);color:var(--navy)}
-footer{color:var(--gold)}
-#mus{border-color:var(--gold);color:var(--navy)}
+      /* ---------- Botón de música ---------- */
+      #mus {
+        position: fixed;
+        right: clamp(14px, 2.5vw, 28px);
+        top: clamp(14px, 2.5vw, 28px);
+        z-index: 70;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        min-height: 48px;
+        padding: 0.7rem 1.1rem;
+        border: 1px solid rgba(169, 130, 64, 0.72);
+        border-radius: 999px;
+        background: rgba(250, 248, 241, 0.94);
+        color: var(--deep);
+        box-shadow:
+          0 8px 24px rgba(48, 43, 28, 0.16),
+          inset 0 0 0 3px rgba(217, 191, 132, 0.14);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        font: 500 0.78rem var(--sans);
+        letter-spacing: 0.035em;
+        cursor: pointer;
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      #mus:hover {
+        transform: translateY(-2px);
+        background: #fffdf7;
+        box-shadow:
+          0 11px 27px rgba(48, 43, 28, 0.2),
+          inset 0 0 0 3px rgba(217, 191, 132, 0.2);
+      }
+      #mus:active {
+        transform: translateY(0);
+      }
+      #mus .mus-icon {
+        width: 17px;
+        height: 17px;
+        fill: currentColor;
+        flex: 0 0 auto;
+      }
+      #mus .pause-icon {
+        display: none;
+      }
+      #mus.on .play-icon {
+        display: none;
+      }
+      #mus.on .pause-icon {
+        display: block;
+      }
+      #mus.on {
+        border-color: var(--gold);
+        background: #f5efdf;
+      }
+      #mus[hidden] {
+        display: none;
+      }
+      @media (max-width: 480px) {
+        #mus {
+          min-height: 46px;
+          padding: 0.68rem 0.9rem;
+          font-size: 0.74rem;
+        }
+      }
+      /* ---------- Paleta cálida: dorado y marrón claro ---------- */
+      :root {
+        --gold: #a98240;
+        --gold2: #d9bf84;
+        --sand: #e6e0c6;
+        --tan: #a9805d;
+        --deep: #3b4120;
+      }
+      .lbl {
+        color: var(--gold);
+      }
+      .btn {
+        border-color: var(--gold);
+        color: var(--deep);
+      }
+      .btn:hover {
+        background: var(--deep);
+        color: var(--gold2);
+        border-color: var(--deep);
+      }
+      .hero h1 {
+        background: linear-gradient(100deg, #4d5329, #6b7140 38%, #a98240);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .arch .main {
+        outline: 1px solid var(--gold);
+        outline-offset: 10px;
+        cursor: zoom-in;
+      }
+      .arch .mini {
+        border-color: var(--sand);
+        box-shadow: 0 0 0 1px var(--gold);
+        cursor: zoom-in;
+      }
+      .arch figcaption,
+      .cd span,
+      .hint {
+        color: var(--tan);
+      }
+      .info .t {
+        color: var(--olive);
+      }
+      #ceremonia,
+      #vestimenta {
+        background: var(--sand);
+        box-shadow: 0 0 0 100vmax var(--sand);
+        clip-path: inset(0 -100vmax);
+      }
+      .cd,
+      .cd div {
+        border-color: var(--gold2);
+      }
+      .cd b {
+        color: var(--gold);
+      }
+      .sld {
+        outline: 1px solid var(--gold);
+        outline-offset: 10px;
+        cursor: zoom-in;
+      }
+      .sl {
+        pointer-events: none;
+      }
+      #dots button {
+        border-color: var(--gold);
+      }
+      #dots .on {
+        background: var(--gold);
+      }
+      .hint {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 0.6rem;
+      }
+      .dc div {
+        border-top: 2px solid var(--gold);
+      }
+      .dc h3 {
+        color: var(--gold);
+      }
+      .rsvp {
+        background: var(--deep);
+        border-color: var(--gold);
+        outline: 1px solid var(--gold2);
+        outline-offset: -10px;
+        color: #efe6cf;
+      }
+      .rsvp .lbl,
+      .rsvp h2 {
+        color: var(--gold2);
+      }
+      .rsvp .btn {
+        border-color: var(--gold2);
+        color: var(--gold2);
+      }
+      .rsvp .btn:hover {
+        background: var(--gold2);
+        color: var(--deep);
+      }
+      footer {
+        color: var(--gold);
+      }
+      #mus {
+        border-color: var(--gold);
+        color: var(--deep);
+      }
 
-/* ---------- Visor de fotos ---------- */
-#lb{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(18,24,42,.95);opacity:0;pointer-events:none;transition:opacity .4s}
-#lb.on{opacity:1;pointer-events:auto}
-#lb img{max-width:92vw;max-height:80svh;object-fit:contain;padding:6px;border:1px solid var(--gold);background:#0f1526}
-#lb button{position:absolute;border:0;background:none;color:var(--gold2);font-size:2.6rem;line-height:1;padding:.6rem 1rem;cursor:pointer}
-#lb .x{top:.5rem;right:.5rem}#lb .p,#lb .n{top:50%;translate:0 -50%}#lb .p{left:.3rem}#lb .n{right:.3rem}
-#lb span{position:absolute;bottom:1.4rem;color:var(--gold2);font:italic 1.1rem var(--serif)}
-@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
-</style>
-</head>
-<body class="lock">
-
-<audio id="aud" loop preload="none"></audio>
-<button id="mus" aria-label="Activar o silenciar la música" hidden>♪</button>
-
-<!-- Portada: sobre cerrado; al tocar el sello se abre y sale la carta -->
-<div id="cover">
-  <div class="stage">
-    <div class="env">
-      <div class="back"></div>
-      <div class="card"><i>Bodas de plata</i><b>Oscar y Carolina</b><hr><i>13 de diciembre de 2026</i></div>
-      <div class="front"></div>
-      <div class="flap"></div>
-      <button class="wax" id="open" aria-label="Abrir la invitación">O&amp;C</button>
+      /* ---------- Visor de fotos ---------- */
+      #lb {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        background: rgba(38, 42, 20, 0.95);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s;
+      }
+      #lb.on {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #lb img {
+        max-width: 92vw;
+        max-height: 80svh;
+        object-fit: contain;
+        padding: 6px;
+        border: 1px solid var(--gold);
+        background: #23260f;
+      }
+      #lb button {
+        position: absolute;
+        border: 0;
+        background: none;
+        color: var(--gold2);
+        font-size: 2.6rem;
+        line-height: 1;
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+      }
+      #lb .x {
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+      #lb .p,
+      #lb .n {
+        top: 50%;
+        translate: 0 -50%;
+      }
+      #lb .p {
+        left: 0.3rem;
+      }
+      #lb .n {
+        right: 0.3rem;
+      }
+      #lb span {
+        position: absolute;
+        bottom: 1.4rem;
+        color: var(--gold2);
+        font: italic 1.1rem var(--serif);
+      }
+      /* ---------- Títulos caligráficos y figuras editoriales del dress code ---------- */
+      h1,
+      h2,
+      h3 {
+        font-family: var(--script);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+      .hero h1 {
+        font-size: clamp(4.1rem, 13vw, 7.1rem);
+        margin: 0.65rem 0 1.35rem;
+      }
+      .info h3 {
+        font-size: clamp(2.25rem, 4vw, 2.75rem);
+        margin: 0.3rem 0;
+      }
+      .dc h3 {
+        font-size: 2.55rem;
+        margin-bottom: 0.45rem;
+      }
+      .rsvp h2 {
+        font-size: clamp(3.1rem, 8vw, 4.7rem);
+        margin: 0.5rem 0 1rem;
+      }
+      .fg {
+        display: block;
+        width: clamp(130px, 42%, 160px);
+        height: auto;
+        margin: 0 auto 1rem;
+        overflow: visible;
+        filter: drop-shadow(0 5px 5px rgba(62, 49, 25, 0.1));
+      }
+      .fg .outline {
+        stroke: #8e744d;
+        stroke-width: 1.25;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+      .fg .detail {
+        fill: none;
+        stroke: #9b8055;
+        stroke-width: 1.15;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+      .fg .soft-detail {
+        fill: none;
+        stroke: rgba(255, 250, 236, 0.8);
+        stroke-width: 1.4;
+        stroke-linecap: round;
+      }
+      .dc > div {
+        background: linear-gradient(145deg, #fbf9f1, #f1ecdd);
+        border: 1px solid rgba(169, 130, 64, 0.24);
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 12px 30px rgba(75, 65, 37, 0.06);
+        text-align: center;
+      }
+      .dc p {
+        max-width: 19rem;
+        margin-inline: auto;
+      }
+      @media (max-width: 520px) {
+        .stage {
+          width: min(88vw, 420px);
+        }
+        .wax {
+          width: 68px;
+        }
+        .hero h1 {
+          font-size: clamp(3.7rem, 15vw, 5.1rem);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition-duration: 0.01ms !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="lock">
+    <!-- Adornos ambientales inspirados en las referencias: ondas doradas y follaje botánico. -->
+    <div class="ambient" aria-hidden="true">
+      <svg
+        class="ambient-wave"
+        viewBox="0 0 1920 420"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient id="waveGold" x1="0" y1="0" x2="1" y2="0.25">
+            <stop offset="0" stop-color="#a9875f" />
+            <stop offset=".48" stop-color="#d9c194" />
+            <stop offset="1" stop-color="#aa895f" />
+          </linearGradient>
+          <linearGradient id="waveFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e8e6d8" stop-opacity=".9" />
+            <stop offset="1" stop-color="#e8e6d8" stop-opacity=".12" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0 165C225 65 443 58 690 155c155 61 271 66 430 18C1370 92 1640 1 1920 110V0H0Z"
+          fill="url(#waveFade)"
+        />
+        <path
+          d="M0 206C235 265 450 255 705 198 1010 130 1326 43 1597 62c145 10 252 51 323 104v120c-150-58-285-48-463-8-280 64-494 140-759 153C420 445 177 372 0 301Z"
+          fill="url(#waveGold)"
+          opacity=".66"
+        />
+      </svg>
+      <svg class="ambient-botanical" viewBox="0 0 460 260">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M230-12C222 43 203 86 152 139M231-8C247 48 273 91 326 142M225 0C195 44 174 65 112 91M237 0C280 33 311 61 361 84"
+            stroke="#b99a62"
+            stroke-width="1.35"
+          />
+          <path
+            d="M228 20C193 34 174 25 164 4c27-5 49 0 64 16ZM208 55C174 66 149 57 140 36c28-4 52 3 68 19ZM183 91C151 104 126 96 116 76c28-7 49-1 67 15ZM163 124C134 139 109 134 99 116c25-9 47-5 64 8ZM252 34C279 21 302 27 311 46c-23 9-43 5-59-12ZM273 72C305 57 329 65 339 86c-26 9-47 4-66-14ZM300 111C329 101 351 111 356 131c-24 6-42-1-56-20Z"
+            fill="#e5e2d3"
+            fill-opacity=".7"
+            stroke="#c4b88f"
+            stroke-width=".8"
+          />
+          <path
+            d="M219 37C190 16 187-4 199-20c23 19 30 38 20 57ZM242 52C272 31 295 35 306 52c-23 17-45 18-64 0ZM196 116C169 98 165 77 176 61c22 17 29 36 20 55ZM265 128C294 107 316 112 325 130c-24 16-44 15-60-2Z"
+            fill="#f1ead9"
+            fill-opacity=".65"
+            stroke="#a98755"
+            stroke-width="1"
+          />
+          <path
+            d="M221 14 201 2m-5 45-31-8m-2 54-31-8m-5 43-28-8m142-72 28-19m-4 59 35-7m-5 50 31-3"
+            stroke="#b99a62"
+            stroke-width=".75"
+          />
+        </g>
+        <g fill="#b58f4e" opacity=".78">
+          <circle cx="111" cy="35" r="2.2" />
+          <circle cx="130" cy="22" r="1.5" />
+          <circle cx="145" cy="13" r="1.7" />
+          <circle cx="333" cy="24" r="1.8" />
+          <circle cx="352" cy="39" r="2.2" />
+          <circle cx="374" cy="52" r="1.5" />
+          <circle cx="293" cy="8" r="1.4" />
+        </g>
+        <g fill="none" stroke="#e2d4b6" stroke-width="1.1" opacity=".85">
+          <path
+            d="M78 0C92 33 101 65 104 91M383 0C370 37 365 65 369 91M150 0C154 28 162 45 177 60M310 0C303 25 294 45 278 59"
+          />
+        </g>
+      </svg>
     </div>
-    <p class="lbl tip">Toca el sello para abrir</p>
-  </div>
-</div>
+    <div class="top-accent" aria-hidden="true"></div>
 
-<main>
-  <!-- Encabezado -->
-  <section class="hero" id="inicio">
-    <div>
-      <p class="lbl">Nuestras bodas de plata</p>
-      <h1>Oscar y Carolina</h1>
-      <p>Veinticinco años, una hermosa familia y una vida compartida. El tiempo nos ha enseñado que el amor verdadero no es el que siempre suena en una melodía perfecta, sino el que sabe encontrar su propia armonía en los días de tormenta y continuar bailando juntos. Hoy miramos el camino recorrido con profunda gratitud y renovamos el compromiso de continuar escribiendo esta maravillosa historia juntos.</p>
+    <audio id="aud" loop preload="none"></audio>
+    <button
+      id="mus"
+      type="button"
+      aria-label="Reproducir música"
+      aria-pressed="false"
+      hidden
+    >
+      <svg
+        class="mus-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path class="play-icon" d="M8 5.5v13l10-6.5z" />
+        <path class="pause-icon" d="M7 5h4v14H7zm6 0h4v14h-4z" />
+      </svg>
+      <span id="mus-label">Reproducir música</span>
+    </button>
+
+    <!-- Portada: sobre cerrado; al tocar el sello se abre y sale la carta -->
+    <div id="cover">
+      <div class="stage">
+        <div class="env">
+          <div class="back"></div>
+          <div class="card">
+            <i>Bodas de plata</i><b>Oscar y Carolina</b
+            ><svg viewBox="0 0 120 12" aria-hidden="true">
+              <path d="M0 6h46M74 6h46" fill="none" />
+              <path d="M60 1c5 3 5 8 0 10-5-2-5-7 0-10z" stroke="none" /></svg
+            ><i>13 de diciembre de 2026</i>
+          </div>
+          <div class="front" aria-hidden="true"></div>
+          <div class="wrap-band" aria-hidden="true"></div>
+          <div class="cord" aria-hidden="true"></div>
+          <svg class="botanical" viewBox="0 0 120 180" aria-hidden="true">
+            <path
+              class="stem"
+              d="M12 165C29 128 45 93 75 45M30 137C20 107 13 87 10 61M43 111C65 105 81 91 91 71M60 83C49 58 45 39 48 18M25 145C49 143 69 130 82 112"
+            />
+            <path
+              class="leaf"
+              d="M12 61C-1 43 3 26 17 22C25 38 23 51 12 61ZM30 119C13 111 8 96 16 85C31 94 35 106 30 119ZM50 49C34 36 34 20 46 12C59 25 59 39 50 49ZM64 104C66 85 80 76 93 82C88 99 77 107 64 104ZM48 135C36 119 39 104 52 100C62 116 59 129 48 135Z"
+            />
+            <g class="flower">
+              <circle cx="76" cy="45" r="4" />
+              <circle cx="84" cy="38" r="3.5" />
+              <circle cx="91" cy="47" r="4" />
+              <circle cx="83" cy="53" r="3.7" />
+              <circle cx="96" cy="34" r="3" />
+              <circle cx="103" cy="43" r="3.1" />
+              <circle cx="89" cy="28" r="3.1" />
+              <circle cx="75" cy="32" r="2.8" />
+              <circle cx="83" cy="40" r="2" fill="#c7b98e" />
+            </g>
+            <g class="flower">
+              <circle cx="10" cy="59" r="3.2" />
+              <circle cx="4" cy="52" r="2.8" />
+              <circle cx="18" cy="51" r="2.7" />
+              <circle cx="12" cy="44" r="2.5" />
+            </g>
+          </svg>
+          <button class="wax" id="open" aria-label="Abrir la invitación">
+            O&amp;C
+          </button>
+        </div>
+        <p class="lbl tip">Toca el sello para abrir</p>
+      </div>
     </div>
-    <figure class="arch">
-      <img class="main" src="img/portada-1.jpg" alt="Oscar y Carolina el día de su boda">
-      <img class="mini" src="img/portada-2.jpg" alt="Oscar y Carolina hoy">
-      <figcaption>Entonces y hoy</figcaption>
-    </figure>
-  </section>
 
-  <!-- Datos de la ceremonia -->
-  <section id="ceremonia">
-    <p class="lbl">Faltan</p>
-    <div class="cd" aria-live="off">
-      <div><b id="d">00</b><span>días</span></div><div><b id="h">00</b><span>horas</span></div>
-      <div><b id="m">00</b><span>minutos</span></div><div><b id="s">00</b><span>segundos</span></div>
+    <main>
+      <!-- Encabezado -->
+      <section class="hero" id="inicio">
+        <div>
+          <p class="lbl">Nuestras bodas de plata</p>
+          <h1>Oscar y Carolina</h1>
+          <p>
+           Veinticinco años de amor, sueños compartidos y una hermosa familia. Juntos hemos aprendido que el amor verdadero no busca la perfección, sino que encuentra su armonía en cada momento y su fuerza en cada tormenta. Hoy celebramos nuestra historia con el corazón lleno de gratitud y la ilusión de seguir caminando de la mano, eligiéndonos cada día.
+          </p>
+        </div>
+        <figure class="arch">
+          <img
+            class="main"
+            src="img/portada-1.jpg"
+            alt="Oscar y Carolina el día de su boda"
+          />
+          <img
+            class="mini"
+            src="img/portada-2.jpg"
+            alt="Oscar y Carolina hoy"
+          />
+          <figcaption>Entonces y hoy</figcaption>
+        </figure>
+      </section>
+
+      <!-- Datos de la ceremonia -->
+      <section id="ceremonia">
+        <p class="lbl">Faltan</p>
+        <div class="cd" aria-live="off">
+          <div><b id="d">00</b><span>días</span></div>
+          <div><b id="h">00</b><span>horas</span></div>
+          <div><b id="m">00</b><span>minutos</span></div>
+          <div><b id="s">00</b><span>segundos</span></div>
+        </div>
+        <div class="info">
+          <div>
+            <p class="lbl">Fecha</p>
+            <h3>Domingo 13 de diciembre</h3>
+            <p>de 2026</p>
+          </div>
+          <div>
+            <p class="lbl">Horarios</p>
+            <h3>Ceremonia</h3>
+            <p class="t">3:30 p.m.</p>
+            <h3>Recepción</h3>
+            <p class="t">5:00 p.m.</p>
+          </div>
+          <div>
+            <p class="lbl">Lugar</p>
+            <h3>Finca Villa Lolita</h3>
+            <a
+              class="btn"
+              href="https://maps.app.goo.gl/AbTa1A9xj1jfecCz7?g_st=iw"
+              target="_blank"
+              rel="noopener"
+              >Ver ubicación</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Slider -->
+      <section id="album">
+        <p class="lbl">Un recorrido por nuestra historia</p>
+        <div class="sld">
+          <img
+            class="sl"
+            src="img/album-1.jpg"
+            alt="Oscar y Carolina en una terraza iluminada"
+            loading="lazy"
+          />
+          <img
+            class="sl"
+            src="img/album-2.jpg"
+            alt="Oscar y Carolina abrazados"
+            loading="lazy"
+            style="object-position: 50% 25%"
+          />
+          <img
+            class="sl"
+            src="img/album-3.jpg"
+            alt="Selfie en el mar"
+            loading="lazy"
+          />
+          <img
+            class="sl"
+            src="img/album-4.jpg"
+            alt="Frente a un arco de bambú"
+            loading="lazy"
+          />
+          <img
+            class="sl"
+            src="img/album-5.jpg"
+            alt="Brazos abiertos frente a la laguna"
+            loading="lazy"
+            style="object-position: 55% 50%"
+          />
+          <img
+            class="sl"
+            src="img/album-6.jpg"
+            alt="Junto a la fuente del jardín"
+            loading="lazy"
+          />
+          <img
+            class="sl"
+            src="img/album-7.jpg"
+            alt="En el muelle de noche"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+          <img
+            class="sl"
+            src="img/album-8.jpg"
+            alt="Mis hijas y yo"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+           <img
+            class="sl"
+            src="img/album-9.jpg"
+            alt="Oscar, carolina y sus hijas"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+           <img
+            class="sl"
+            src="img/album-10.jpg"
+            alt="Oscar, carolina y sus hijas"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+            <img
+            class="sl"
+            src="img/album-11.jpg"
+            alt="Oscar, carolina y sus hijas en una fiestra de graduacion"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+           <img
+            class="sl"
+            src="img/album-12.jpg"
+            alt="Oscar y carolina en el mar"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+           <img
+            class="sl"
+            src="img/album-13.jpg"
+            alt="Oscar y carolina abrazados en un background de flamencos"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+           <img
+            class="sl"
+            src="img/album-14.jpg"
+            alt="Oscar y carolina en su inicio de relacion"
+            loading="lazy"
+            style="object-position: 50% 0"
+          />
+
+          <button class="arw" id="prev" aria-label="Foto anterior">‹</button>
+          <button class="arw" id="next" aria-label="Foto siguiente">›</button>
+        </div>
+        <div id="dots"></div>
+        <p class="hint">Toca una foto para verla en grande</p>
+      </section>
+
+      <!-- Dress code -->
+      <section id="vestimenta">
+        <p class="lbl">Código de vestimenta</p>
+        <div class="dc">
+          <div>
+            <svg
+              class="fg"
+              viewBox="0 0 180 330"
+              role="img"
+              aria-label="Ilustración editorial de hombre con camisa de manga larga y pantalón"
+            >
+              <defs>
+                <linearGradient id="suitTone" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#d1c3a8" />
+                  <stop offset="1" stop-color="#a99a7c" />
+                </linearGradient>
+                <linearGradient id="shirtTone" x1="0" y1="0" x2="0.9" y2="1">
+                  <stop offset="0" stop-color="#fffdf6" />
+                  <stop offset="1" stop-color="#e8e0cf" />
+                </linearGradient>
+                <linearGradient id="trouserTone" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#b5a789" />
+                  <stop offset="1" stop-color="#8d8067" />
+                </linearGradient>
+              </defs>
+              <ellipse
+                cx="90"
+                cy="316"
+                rx="42"
+                ry="5"
+                fill="#8c7958"
+                opacity=".16"
+              />
+              <!-- Cabello, rostro y cuello -->
+              <path
+                d="M70 37C67 15 79 7 93 8c18 1 24 16 18 34l-5 17H73Z"
+                fill="#514334"
+              />
+              <path
+                d="M74 30c1-13 9-19 18-19 12 0 19 8 18 21l-3 22c-3 10-10 16-18 16s-16-7-18-17Z"
+                fill="#e8c9a9"
+                class="outline"
+              />
+              <path
+                d="M71 32c1-16 10-25 23-24 12 1 19 9 19 22-7-2-12-8-15-13-7 8-16 12-27 15Z"
+                fill="#514334"
+              />
+              <path d="M82 43h3m12 0h3" class="detail" />
+              <path d="M88 55q4 3 8 0" class="detail" />
+              <path d="M82 64v15q8 8 16 0V64" fill="#dfb996" class="outline" />
+              <!-- Camisa -->
+              <path
+                d="M78 73 90 83l12-10 14 8-7 39H71l-7-39Z"
+                fill="url(#shirtTone)"
+                class="outline"
+              />
+              <path
+                d="m78 73 12 10-8 18-9-21Zm24 0L90 83l8 18 9-21Z"
+                fill="#f6f1e5"
+                class="outline"
+              />
+              <path
+                d="m87 88 3 7 3-7 4 38H83Z"
+                fill="#8e7550"
+                class="outline"
+              />
+              <!-- Chaqueta y mangas -->
+              <path
+                d="M78 72 63 77Q56 80 52 94L40 151q-2 9 8 13l11 3 12-49-4 78q23 10 46 0l-4-78 12 49 11-3q10-4 8-13l-12-57q-4-14-11-17l-15-5-12 18Z"
+                fill="url(#suitTone)"
+                class="outline"
+              />
+              <path
+                d="m78 72 12 11-12 30-9-35Zm24 0L90 83l12 30 9-35Z"
+                fill="#c5b696"
+                class="outline"
+              />
+              <path d="M90 84v111M78 144h3m18 0h3" class="detail" />
+              <path d="M58 98 49 150m73-52 9 52" class="soft-detail" />
+              <!-- Pantalón -->
+              <path
+                d="M67 196q23 8 46 0l-4 103q-8 5-17 1l-2-76-3 76q-9 4-18-1Z"
+                fill="url(#trouserTone)"
+                class="outline"
+              />
+              <path d="M90 202v21m-17-14-2 82m35-82 2 82" class="detail" />
+              <path
+                d="M71 297q8 5 19 2l3 9q-1 5-26 4-8-1-5-7Zm21 2q10 4 18-1l9 8q2 5-22 6-8 0-8-5Z"
+                fill="#665744"
+                class="outline"
+              />
+            </svg>
+            <h3>Ellos</h3>
+            <p>Camisa de manga larga y pantalón blanco o beige.</p>
+          </div>
+          <div>
+            <svg
+              class="fg"
+              viewBox="0 0 180 330"
+              role="img"
+              aria-label="Ilustración editorial de mujer con vestido largo de un solo tono"
+            >
+              <defs>
+                <linearGradient id="dressTone" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#d9c292" />
+                  <stop offset=".55" stop-color="#c2a66e" />
+                  <stop offset="1" stop-color="#a98b59" />
+                </linearGradient>
+                <linearGradient id="hairTone" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#604b38" />
+                  <stop offset="1" stop-color="#392c24" />
+                </linearGradient>
+              </defs>
+              <ellipse
+                cx="90"
+                cy="316"
+                rx="47"
+                ry="5"
+                fill="#8c7958"
+                opacity=".16"
+              />
+              <!-- Cabello y rostro -->
+              <path
+                d="M67 47C61 16 77 5 94 7c20 2 27 19 20 45l-5 50-12 18H69L58 91Z"
+                fill="url(#hairTone)"
+              />
+              <path
+                d="M74 29c2-13 11-19 20-18 12 1 19 10 18 24l-3 23c-3 12-10 18-19 18-8 0-16-8-18-19Z"
+                fill="#e8c9a9"
+                class="outline"
+              />
+              <path
+                d="M72 32C70 15 82 7 94 9c12 1 19 10 19 23-7-2-13-8-16-14-7 9-15 13-25 14Z"
+                fill="#4d3a2d"
+              />
+              <path d="M81 45h3m13 0h3m-11 12q4 3 8 0" class="detail" />
+              <path d="M82 69v13q8 8 16 0V68" fill="#dfb996" class="outline" />
+              <!-- Cabello que cae sobre los hombros -->
+              <path
+                d="M70 31q-6 36-8 71l-3 36q13-5 19-23l4-39Zm43 1q9 35 12 69l5 33q-15-5-21-25l-2-41Z"
+                fill="url(#hairTone)"
+              />
+              <!-- Brazos -->
+              <path
+                d="M73 84q-10 2-14 15l-10 48q-2 9 6 12 8 3 12-7l13-41Zm34 0q10 2 14 15l10 48q2 9-6 12-8 3-12-7l-13-41Z"
+                fill="#e8c9a9"
+                class="outline"
+              />
+              <!-- Vestido de gala, un solo tono -->
+              <path
+                d="M78 80q12 11 24 0l13 9q-1 17-9 36 23 49 36 168-51 24-104 0 13-119 36-168-8-19-9-36Z"
+                fill="url(#dressTone)"
+                class="outline"
+              />
+              <path
+                d="M78 81q12 11 24 0l-5 25H83Z"
+                fill="#ead7ad"
+                class="outline"
+              />
+              <path
+                d="M82 124q-13 55-15 151m24-145q-2 73 0 151m8-157q21 65 29 151"
+                class="soft-detail"
+              />
+              <path d="M69 172q21 10 42 0" class="detail" opacity=".55" />
+              <path
+                d="M42 299q21 9 43 0m-21 8 0 5m25-13q24 9 43 0"
+                class="detail"
+                opacity=".6"
+              />
+              <path
+                d="M69 294q8 4 17 2l2 11q-2 5-24 4-7-1-5-7Zm24 2q9 4 17-1l8 8q2 5-21 6-8 0-8-5Z"
+                fill="#80694b"
+                class="outline"
+              />
+              <!-- Detalle pequeño del peinado -->
+              <path
+                d="M108 28q8 4 10 13"
+                fill="none"
+                stroke="#c4a36a"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h3>Ellas</h3>
+            <p>Vestido largo, en un solo tono.</p>
+          </div>
+        </div>
+        <div class="res">
+          <p class="lbl">Estos colores son solo de la novia</p>
+          <div class="sw">
+            <i style="background: #fff"></i
+            ><i style="background: var(--olive)"></i
+            ><i style="background: var(--brown)"></i>
+          </div>
+          <p>Te pedimos no usarlos.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Confirmación de asistencia -->
+    <div class="rsvp" id="confirmar">
+      <p class="lbl">Tu presencia es nuestro mejor regalo</p>
+      <h2>Confirma tu asistencia</h2>
+      <!-- EDITAR-FORM: pega aquí el link del Google Form -->
+      <a class="btn" href="#" target="_blank" rel="noopener"
+        >Confirmar en el formulario</a
+      >
     </div>
-    <div class="info">
-      <div><p class="lbl">Fecha</p><h3>Domingo 13 de diciembre</h3><p>de 2026</p></div>
-      <div><p class="lbl">Horarios</p><h3>Ceremonia</h3><p class="t">3:30 p.m.</p><h3>Recepción</h3><p class="t">5:00 p.m.</p></div>
-      <div><p class="lbl">Lugar</p><h3>Finca Villa Lolita</h3>
-        <a class="btn" href="https://maps.app.goo.gl/AbTa1A9xj1jfecCz7?g_st=iw" target="_blank" rel="noopener">Ver ubicación</a></div>
+    <footer>Oscar y Carolina · 13.12.2026</footer>
+
+    <!-- Visor de fotos -->
+    <div id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotos">
+      <button class="x" aria-label="Cerrar">&times;</button
+      ><button class="p" aria-label="Foto anterior">&lsaquo;</button>
+      <img alt="" /><button class="n" aria-label="Foto siguiente">
+        &rsaquo;</button
+      ><span></span>
     </div>
-  </section>
 
-  <!-- Slider -->
-  <section id="album">
-    <p class="lbl">Un recorrido por nuestra historia</p>
-    <div class="sld">
-      <img class="sl" src="img/album-1.jpg" alt="Oscar y Carolina en una terraza iluminada" loading="lazy">
-      <img class="sl" src="img/album-2.jpg" alt="Oscar y Carolina abrazados" loading="lazy" style="object-position:50% 25%">
-      <img class="sl" src="img/album-3.jpg" alt="Selfie en el mar" loading="lazy">
-      <img class="sl" src="img/album-4.jpg" alt="Frente a un arco de bambú" loading="lazy">
-      <img class="sl" src="img/album-5.jpg" alt="Brazos abiertos frente a la laguna" loading="lazy" style="object-position:55% 50%">
-      <img class="sl" src="img/album-6.jpg" alt="Junto a la fuente del jardín" loading="lazy">
-      <img class="sl" src="img/album-7.jpg" alt="En el muelle de noche" loading="lazy" style="object-position:50% 0">
-      <button class="arw" id="prev" aria-label="Foto anterior">‹</button>
-      <button class="arw" id="next" aria-label="Foto siguiente">›</button>
-    </div>
-    <div id="dots"></div>
-    <p class="hint">Toca una foto para verla en grande</p>
-  </section>
+    <script>
+      /* ===== Configuración ===== */
+      const EVENT_DATE = new Date("2026-12-13T15:30:00-05:00"); // ceremonia, hora de Colombia
+      const MUSIC_SRC = "audio/musica.mp3"; // pega tu mp3 aquí
+      const $ = (s) => document.querySelector(s),
+        $$ = (s) => [...document.querySelectorAll(s)];
 
-  <!-- Dress code -->
-  <section id="vestimenta">
-    <p class="lbl">Código de vestimenta</p>
-    <div class="dc">
-      <div><h3>Ellos</h3><p>Camisa de manga larga y pantalón blanco o beige.</p></div>
-      <div><h3>Ellas</h3><p>Vestido largo, en un solo tono.</p></div>
-    </div>
-    <div class="res">
-      <p class="lbl">Estos colores son solo de la novia</p>
-      <div class="sw"><i style="background:#fff"></i><i style="background:var(--olive)"></i><i style="background:var(--brown)"></i></div>
-      <p>Te pedimos no usarlos.</p>
-    </div>
-  </section>
-</main>
-
-<!-- Confirmación de asistencia -->
-<div class="rsvp" id="confirmar">
-  <p class="lbl">Tu presencia es nuestro mejor regalo</p>
-  <h2>Confirma tu asistencia</h2>
-  <!-- EDITAR-FORM: pega aquí el link del Google Form -->
-  <a class="btn" href="#" target="_blank" rel="noopener">Confirmar en el formulario</a>
-</div>
-<footer>Oscar y Carolina · 13.12.2026</footer>
-
-<!-- Visor de fotos -->
-<div id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotos">
-  <button class="x" aria-label="Cerrar">&times;</button><button class="p" aria-label="Foto anterior">&lsaquo;</button>
-  <img alt=""><button class="n" aria-label="Foto siguiente">&rsaquo;</button><span></span>
-</div>
-
-<script>
-/* ===== Configuración ===== */
-const EVENT_DATE = new Date('2026-12-13T15:30:00-05:00'); // ceremonia, hora de Colombia
-const MUSIC_SRC  = 'audio/musica.mp3';                    // pega tu mp3 aquí
-const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-
-/* ===== Sonido de apertura: se sintetiza con Web Audio (no necesita archivos) =====
+      /* ===== Sonido de apertura: se sintetiza con Web Audio (no necesita archivos) =====
    Roce de papel al abrir la solapa + campanita suave cuando sale la carta. */
-function sfx(){
-  try{
-    const A = new (window.AudioContext || window.webkitAudioContext)(), t = A.currentTime;
-    const buf = A.createBuffer(1, A.sampleRate * 1.2, A.sampleRate), d = buf.getChannelData(0);
-    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
-    const n = A.createBufferSource(); n.buffer = buf;
-    const f = A.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 2800; f.Q.value = .7;
-    const g = A.createGain(); g.gain.setValueAtTime(.0001, t);
-    g.gain.exponentialRampToValueAtTime(.25, t + .15); g.gain.exponentialRampToValueAtTime(.0001, t + 1.1);
-    n.connect(f).connect(g).connect(A.destination); n.start(t);
-    [1318.5, 1975.5, 2637].forEach((hz, i) => {
-      const o = A.createOscillator(), og = A.createGain(), s = t + .9 + i * .12;
-      o.type = 'sine'; o.frequency.value = hz;
-      og.gain.setValueAtTime(.0001, s); og.gain.exponentialRampToValueAtTime(.12, s + .02); og.gain.exponentialRampToValueAtTime(.0001, s + 1.6);
-      o.connect(og).connect(A.destination); o.start(s); o.stop(s + 1.7);
-    });
-  }catch(e){}
-}
+      function sfx() {
+        try {
+          const A = new (window.AudioContext || window.webkitAudioContext)(),
+            t = A.currentTime;
+          const buf = A.createBuffer(1, A.sampleRate * 1.2, A.sampleRate),
+            d = buf.getChannelData(0);
+          for (let i = 0; i < d.length; i++)
+            d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+          const n = A.createBufferSource();
+          n.buffer = buf;
+          const f = A.createBiquadFilter();
+          f.type = "bandpass";
+          f.frequency.value = 2800;
+          f.Q.value = 0.7;
+          const g = A.createGain();
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.25, t + 0.15);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + 1.1);
+          n.connect(f).connect(g).connect(A.destination);
+          n.start(t);
+          [1318.5, 1975.5, 2637].forEach((hz, i) => {
+            const o = A.createOscillator(),
+              og = A.createGain(),
+              s = t + 0.9 + i * 0.12;
+            o.type = "sine";
+            o.frequency.value = hz;
+            og.gain.setValueAtTime(0.0001, s);
+            og.gain.exponentialRampToValueAtTime(0.12, s + 0.02);
+            og.gain.exponentialRampToValueAtTime(0.0001, s + 1.6);
+            o.connect(og).connect(A.destination);
+            o.start(s);
+            o.stop(s + 1.7);
+          });
+        } catch (e) {}
+      }
 
-/* ===== Apertura de la carta (también inicia la música: el clic lo permite) ===== */
-const aud = $('#aud'), mus = $('#mus');
-aud.src = MUSIC_SRC;
-mus.hidden = false;
-aud.addEventListener('error', () => mus.hidden = true);   // sin mp3, el botón se oculta solo
-aud.onplay = () => mus.classList.add('on');
-aud.onpause = () => mus.classList.remove('on');
-mus.onclick = () => aud.paused ? aud.play() : aud.pause();
-$('#open').onclick = () => {
-  const c = $('#cover');
-  c.classList.add('open');                                 // 0 s: se abre la solapa
-  sfx();
-  aud.volume = 0;                                          // la canción entra con fundido (en iOS el volumen es fijo)
-  aud.play().then(() => { let v = 0; const fd = setInterval(() => { v = Math.min(.7, v + .02); aud.volume = v; if (v >= .7) clearInterval(fd); }, 120); }).catch(() => {});
-  setTimeout(() => c.classList.add('out'), 900);           // 0.9 s: sale la carta
-  setTimeout(() => {                                       // 2.7 s: entra el sitio
-    c.classList.add('fin');
-    document.body.classList.remove('lock');
-    document.body.classList.add('open');
-  }, 2700);
-  setTimeout(() => c.remove(), 3900);
-};
+      /* ===== Apertura de la carta (también inicia la música: el clic lo permite) ===== */
+      const aud = $("#aud"),
+        mus = $("#mus"),
+        musLabel = $("#mus-label");
+      aud.src = MUSIC_SRC;
+      mus.hidden = false;
+      function syncMusicControl(playing) {
+        mus.classList.toggle("on", playing);
+        mus.setAttribute("aria-pressed", String(playing));
+        mus.setAttribute(
+          "aria-label",
+          playing ? "Pausar música" : "Reproducir música",
+        );
+        musLabel.textContent = playing ? "Pausar música" : "Reproducir música";
+      }
+      syncMusicControl(false);
+      aud.addEventListener("error", () => {
+        mus.hidden = true;
+      }); // si no existe el MP3, no muestra un control que no funcionaría
+      aud.onplay = () => syncMusicControl(true);
+      aud.onpause = () => syncMusicControl(false);
+      mus.onclick = async () => {
+        if (aud.paused) {
+          try {
+            await aud.play();
+          } catch (e) {
+            syncMusicControl(false);
+          }
+        } else {
+          aud.pause();
+        }
+      };
+      $("#open").onclick = () => {
+        const c = $("#cover");
+        c.classList.add("open"); // 0 s: se abre la solapa
+        sfx();
+        aud.volume = 0; // la canción entra con fundido
+        aud
+          .play()
+          .then(() => {
+            let v = 0;
+            const fd = setInterval(() => {
+              if (aud.paused) {
+                clearInterval(fd);
+                return;
+              }
+              v = Math.min(0.7, v + 0.02);
+              aud.volume = v;
+              if (v >= 0.7) clearInterval(fd);
+            }, 120);
+          })
+          .catch(() => syncMusicControl(false));
+        setTimeout(() => c.classList.add("out"), 900); // 0.9 s: sale la carta
+        setTimeout(() => {
+          // 2.7 s: entra el sitio
+          c.classList.add("fin");
+          document.body.classList.remove("lock");
+          document.body.classList.add("open");
+        }, 2700);
+        setTimeout(() => c.remove(), 3900);
+      };
 
-/* ===== Cuenta regresiva ===== */
-const cd = ['d','h','m','s'].map(k => $('#' + k));
-function tick(){
-  let t = Math.max(0, EVENT_DATE - Date.now()) / 1000;
-  [86400, 3600, 60, 1].forEach((u, i) => { cd[i].textContent = String(Math.floor(t / u)).padStart(2, '0'); t %= u; });
-}
-tick(); setInterval(tick, 1000);
+      /* ===== Cuenta regresiva ===== */
+      const cd = ["d", "h", "m", "s"].map((k) => $("#" + k));
+      function tick() {
+        let t = Math.max(0, EVENT_DATE - Date.now()) / 1000;
+        [86400, 3600, 60, 1].forEach((u, i) => {
+          cd[i].textContent = String(Math.floor(t / u)).padStart(2, "0");
+          t %= u;
+        });
+      }
+      tick();
+      setInterval(tick, 1000);
 
-/* ===== Slider: fundido, puntos, flechas, swipe y autoplay ===== */
-const sl = $$('.sl'), dots = $('#dots'); let cur = 0, timer;
-sl.forEach((_, i) => { const b = document.createElement('button'); b.setAttribute('aria-label', 'Ir a la foto ' + (i + 1)); b.onclick = () => go(i, true); dots.append(b); });
-function go(i, manual){
-  cur = (i + sl.length) % sl.length;
-  sl.forEach((s, n) => s.classList.toggle('on', n === cur));
-  [...dots.children].forEach((d, n) => d.classList.toggle('on', n === cur));
-  if (manual) play();
-}
-function play(){ clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }
-$('#prev').onclick = () => go(cur - 1, true);
-$('#next').onclick = () => go(cur + 1, true);
-let x0; const box = $('.sld');
-box.ontouchstart = e => x0 = e.touches[0].clientX;
-box.ontouchend = e => { const d = e.changedTouches[0].clientX - x0; if (Math.abs(d) > 40) go(cur + (d < 0 ? 1 : -1), true); };
-go(0); play();
+      /* ===== Slider: fundido, puntos, flechas, swipe y autoplay ===== */
+      const sl = $$(".sl"),
+        dots = $("#dots");
+      let cur = 0,
+        timer;
+      sl.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.setAttribute("aria-label", "Ir a la foto " + (i + 1));
+        b.onclick = () => go(i, true);
+        dots.append(b);
+      });
+      function go(i, manual) {
+        cur = (i + sl.length) % sl.length;
+        sl.forEach((s, n) => s.classList.toggle("on", n === cur));
+        [...dots.children].forEach((d, n) =>
+          d.classList.toggle("on", n === cur),
+        );
+        if (manual) play();
+      }
+      function play() {
+        clearInterval(timer);
+        timer = setInterval(() => go(cur + 1), 5000);
+      }
+      $("#prev").onclick = () => go(cur - 1, true);
+      $("#next").onclick = () => go(cur + 1, true);
+      let x0;
+      const box = $(".sld");
+      box.ontouchstart = (e) => (x0 = e.touches[0].clientX);
+      box.ontouchend = (e) => {
+        const d = e.changedTouches[0].clientX - x0;
+        if (Math.abs(d) > 40) go(cur + (d < 0 ? 1 : -1), true);
+      };
+      go(0);
+      play();
 
-/* ===== Visor de fotos: portadas + álbum, flechas, teclado (Esc, ← →), swipe y clic fuera para cerrar ===== */
-const lb = $('#lb'), lbImg = $('#lb img'), lbN = $('#lb span');
-const G = [...$$('.arch img'), ...sl]; let li = 0;
-function show(i){ li = (i + G.length) % G.length; lbImg.src = G[li].src; lbImg.alt = G[li].alt; lbN.textContent = (li + 1) + ' / ' + G.length; }
-function openLB(i){ show(i); lb.classList.add('on'); document.body.classList.add('lock'); clearInterval(timer); }
-function closeLB(){ lb.classList.remove('on'); document.body.classList.remove('lock'); play(); }
-$$('.arch img').forEach((im, i) => im.onclick = () => openLB(i));
-box.onclick = e => { if (!e.target.closest('.arw')) openLB(cur + 2); };   // +2: las 2 portadas van primero
-$('#lb .x').onclick = closeLB;
-$('#lb .p').onclick = () => show(li - 1);
-$('#lb .n').onclick = () => show(li + 1);
-lb.onclick = e => { if (e.target === lb) closeLB(); };
-document.addEventListener('keydown', e => {
-  if (!lb.classList.contains('on')) return;
-  if (e.key === 'Escape') closeLB();
-  if (e.key === 'ArrowRight') show(li + 1);
-  if (e.key === 'ArrowLeft') show(li - 1);
-});
-let lx; lb.ontouchstart = e => lx = e.touches[0].clientX;
-lb.ontouchend = e => { const d = e.changedTouches[0].clientX - lx; if (Math.abs(d) > 50) show(li + (d < 0 ? 1 : -1)); };
-</script>
-</body>
+      /* ===== Visor de fotos: portadas + álbum, flechas, teclado (Esc, ← →), swipe y clic fuera para cerrar ===== */
+      const lb = $("#lb"),
+        lbImg = $("#lb img"),
+        lbN = $("#lb span");
+      const G = [...$$(".arch img"), ...sl];
+      let li = 0;
+      function show(i) {
+        li = (i + G.length) % G.length;
+        lbImg.src = G[li].src;
+        lbImg.alt = G[li].alt;
+        lbN.textContent = li + 1 + " / " + G.length;
+      }
+      function openLB(i) {
+        show(i);
+        lb.classList.add("on");
+        document.body.classList.add("lock");
+        clearInterval(timer);
+      }
+      function closeLB() {
+        lb.classList.remove("on");
+        document.body.classList.remove("lock");
+        play();
+      }
+      $$(".arch img").forEach((im, i) => (im.onclick = () => openLB(i)));
+      box.onclick = (e) => {
+        if (!e.target.closest(".arw")) openLB(cur + 2);
+      }; // +2: las 2 portadas van primero
+      $("#lb .x").onclick = closeLB;
+      $("#lb .p").onclick = () => show(li - 1);
+      $("#lb .n").onclick = () => show(li + 1);
+      lb.onclick = (e) => {
+        if (e.target === lb) closeLB();
+      };
+      document.addEventListener("keydown", (e) => {
+        if (!lb.classList.contains("on")) return;
+        if (e.key === "Escape") closeLB();
+        if (e.key === "ArrowRight") show(li + 1);
+        if (e.key === "ArrowLeft") show(li - 1);
+      });
+      let lx;
+      lb.ontouchstart = (e) => (lx = e.touches[0].clientX);
+      lb.ontouchend = (e) => {
+        const d = e.changedTouches[0].clientX - lx;
+        if (Math.abs(d) > 50) show(li + (d < 0 ? 1 : -1));
+      };
+    </script>
+  </body>
 </html>
