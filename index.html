@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Oscar y Carolina · Bodas de Plata</title>
+<meta name="description" content="Te invitamos a celebrar nuestros 25 años de matrimonio. 13 de diciembre, Finca Villa Lolita.">
+<meta property="og:title" content="Oscar y Carolina · Bodas de Plata">
+<meta property="og:image" content="img/portada-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+<!--
+  VERSIÓN 1 · "Plata y niebla"  (Bodoni Moda + Figtree, fondo perla, composición editorial a la izquierda)
+
+  CÓMO EDITAR
+  1. Google Form ........ busca  EDITAR-FORM   (pega el link en el href)
+  2. Música ............. pon el mp3 en audio/musica.mp3 (o cambia MUSIC_SRC en el <script>)
+  3. Fecha de la cuenta . EVENT_DATE en el <script> (zona horaria Colombia, -05:00)
+  4. Fotos .............. carpeta img/ (portada-1, portada-2 y album-1…7)
+  Para publicar: renombra este archivo a index.html y sube la carpeta completa.
+-->
+<style>
+/* ---------- Variables ---------- */
+:root{--bg:#e8ebe8;--card:#f6f7f5;--ink:#252a20;--silver:#8e9598;--line:#c3c8c6;--olive:#6b7140;--brown:#5a4332;
+--serif:'Bodoni Moda',Georgia,serif;--sans:'Figtree',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 1.0625rem/1.75 var(--sans);overflow-x:hidden}
+body.lock{overflow:hidden;height:100svh}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+section{max-width:1040px;margin:auto;padding:clamp(4.5rem,11vw,8rem) 1.5rem}
+.lbl{font:italic 400 1.1rem var(--serif);color:var(--silver)}
+.btn{display:inline-block;margin-top:1.4rem;padding:.95rem 2rem;border:1px solid var(--ink);color:var(--ink);background:none;
+font:400 .95rem var(--sans);letter-spacing:.08em;text-decoration:none;cursor:pointer;transition:background .4s,color .4s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+
+/* ---------- Portada: sobre azul marino con sello dorado ---------- */
+#cover{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;
+background:radial-gradient(circle at 50% 38%,#faf6ec,#dfe2de 72%);transition:opacity 1.1s ease}
+#cover.fin{opacity:0;pointer-events:none}
+.stage{width:min(88vw,520px)}
+.env{position:relative;aspect-ratio:3/2;perspective:900px;filter:drop-shadow(0 22px 28px rgba(27,37,64,.35))}
+.env>*{position:absolute}
+.back{inset:0;background:#162039}
+.card{left:6%;right:6%;top:8%;height:86%;z-index:2;background:#17203a;border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;
+padding-top:1.5rem;color:var(--gold2);transition:transform 1.3s cubic-bezier(.65,0,.25,1)}
+.card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(217,191,132,.5)}
+.card i{font:italic 400 1.05rem var(--serif)}
+.card b{font:400 clamp(1.7rem,7vw,2.5rem)/1.1 var(--serif);margin:.5rem 0;background:linear-gradient(100deg,#c99f52,#f3e0a8 50%,#b88a3e);
+-webkit-background-clip:text;background-clip:text;color:transparent}
+.card hr{border:0;width:55%;height:1px;margin:.3rem 0 .6rem;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+.front{inset:0;z-index:3;background:linear-gradient(160deg,#26345a,#18213a);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.flap{left:0;right:0;top:0;height:54%;z-index:4;background:linear-gradient(180deg,#34456f,#243255);clip-path:polygon(0 0,100% 0,50% 100%);
+transform-origin:top;transition:transform 1s cubic-bezier(.5,0,.2,1),z-index 0s .5s}
+.wax{left:50%;top:54%;z-index:6;translate:-50% -50%;width:78px;aspect-ratio:1;border-radius:50%;border:0;cursor:pointer;
+background:radial-gradient(circle at 35% 30%,#f6e4ae,#c79d50 55%,#8c6a2d);box-shadow:0 4px 10px rgba(0,0,0,.4),inset 0 0 0 5px rgba(255,255,255,.15);
+font:italic 400 1.35rem var(--serif);color:#6b4d1b;animation:ring 2.4s infinite;transition:opacity .5s,scale .5s}
+@keyframes ring{from{box-shadow:0 4px 10px rgba(0,0,0,.4),0 0 0 0 rgba(217,191,132,.75)}to{box-shadow:0 4px 10px rgba(0,0,0,.4),0 0 0 22px rgba(217,191,132,0)}}
+.tip{margin-top:2.2rem;transition:opacity .5s}
+#cover.open .wax{opacity:0;scale:.5;animation:none;pointer-events:none}
+#cover.open .tip{opacity:0}
+#cover.open .flap{transform:rotateX(180deg);z-index:1}   /* la solapa se abre y queda detrás de la carta */
+#cover.out .card{transform:translateY(-62%)}              /* la carta sale del sobre */
+
+/* ---------- Encabezado ---------- */
+.hero{display:grid;gap:3.5rem;align-items:center;min-height:100svh}
+@media(min-width:860px){.hero{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(3.4rem,11vw,6.6rem);margin:.8rem 0 1.8rem;letter-spacing:-.02em}
+.hero p{font:400 1.18rem/1.85 var(--serif);max-width:36rem;color:#3b4135}
+.arch{position:relative;justify-self:center;width:min(100%,380px)}
+.arch .main{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:999px 999px 0 0}
+.arch .mini{position:absolute;left:-12%;bottom:-7%;width:44%;aspect-ratio:1;object-fit:cover;object-position:50% 30%;border-radius:50%;border:7px solid var(--bg)}
+.arch figcaption{position:absolute;right:-1rem;top:42%;writing-mode:vertical-rl;color:var(--silver);font:italic 1rem var(--serif)}
+/* Un solo momento animado: al abrir la carta, el encabezado entra */
+.hero>*{opacity:0;transition:opacity 1.4s ease .5s}
+body.open .hero>*{opacity:1}
+
+/* ---------- Ceremonia ---------- */
+.cd{display:grid;grid-template-columns:repeat(4,1fr);margin:2.5rem 0 3.5rem;border-block:1px solid var(--line)}
+.cd div{padding:1.6rem 0;text-align:center;border-left:1px solid var(--line)}
+.cd div:first-child{border:0}
+.cd b{display:block;font:400 clamp(2.4rem,9vw,4.6rem)/1 var(--serif)}
+.cd span{font-size:.9rem;color:var(--silver)}
+.info{display:grid;gap:2.5rem}
+@media(min-width:760px){.info{grid-template-columns:repeat(3,1fr)}}
+.info h3{font-size:2rem;margin:.3rem 0}
+.info .t{font:italic 400 1.15rem var(--serif);color:var(--olive)}
+
+/* ---------- Slider (fundido) ---------- */
+.sld{position:relative;max-width:500px;aspect-ratio:4/5;margin:2.5rem auto 0;overflow:hidden;background:var(--line)}
+.sl{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 6s ease}
+.sl.on{opacity:1;transform:none}
+.arw{position:absolute;top:50%;translate:0 -50%;width:44px;height:44px;border:0;border-radius:50%;background:rgba(246,247,245,.85);font-size:1.3rem;cursor:pointer}
+#prev{left:.8rem}#next{right:.8rem}
+#dots{display:flex;justify-content:center;gap:.6rem;margin-top:1.2rem}
+#dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--ink);background:none;cursor:pointer;padding:0}
+#dots .on{background:var(--ink)}
+
+/* ---------- Dress code ---------- */
+.dc{display:grid;gap:2.5rem;margin-top:2.5rem}
+@media(min-width:760px){.dc{grid-template-columns:1fr 1fr}}
+.dc div{background:var(--card);padding:2rem}
+.dc h3{font-size:1.8rem;margin-bottom:.5rem}
+.res{margin-top:2.5rem;text-align:center}
+.sw{display:flex;justify-content:center;gap:1.6rem;margin:1.2rem 0 .8rem}
+.sw i{width:64px;height:64px;border-radius:50%;border:1px solid var(--line)}
+
+/* ---------- Confirmación ---------- */
+.rsvp{text-align:center;border:1px solid var(--silver);margin:0 1.5rem 3rem;padding:clamp(3rem,8vw,5rem) 1.5rem}
+.rsvp h2{font-size:clamp(2.2rem,7vw,3.6rem);margin:.5rem 0 1rem}
+footer{text-align:center;padding:2rem 1.5rem 4.5rem;font:italic 1.2rem var(--serif);color:var(--silver)}
+
+/* ---------- Botón de música ---------- */
+#mus{position:fixed;right:1rem;bottom:1rem;z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);background:var(--card);
+font-size:1.2rem;cursor:pointer;opacity:.5;transition:opacity .3s}
+#mus.on{opacity:1}
+#mus[hidden]{display:none}
+/* ---------- Paleta cálida: dorado y marrón claro ---------- */
+:root{--gold:#a98240;--gold2:#d9bf84;--sand:#efe6d4;--tan:#a9805d;--navy:#1b2540}
+.lbl{color:var(--gold)}
+.btn{border-color:var(--gold);color:var(--navy)}
+.btn:hover{background:var(--navy);color:var(--gold2);border-color:var(--navy)}
+.hero h1{background:linear-gradient(100deg,#7d5c26,#c9a45a 45%,#8a6628);-webkit-background-clip:text;background-clip:text;color:transparent}
+.arch .main{outline:1px solid var(--gold);outline-offset:10px;cursor:zoom-in}
+.arch .mini{border-color:var(--sand);box-shadow:0 0 0 1px var(--gold);cursor:zoom-in}
+.arch figcaption,.cd span,.info .t,.hint{color:var(--tan)}
+#ceremonia,#vestimenta{background:var(--sand);box-shadow:0 0 0 100vmax var(--sand);clip-path:inset(0 -100vmax)}
+.cd,.cd div{border-color:var(--gold2)}
+.cd b{color:var(--gold)}
+.sld{outline:1px solid var(--gold);outline-offset:10px;cursor:zoom-in}
+.sl{pointer-events:none}
+#dots button{border-color:var(--gold)}#dots .on{background:var(--gold)}
+.hint{text-align:center;font-size:.9rem;margin-top:.6rem}
+.dc div{border-top:2px solid var(--gold)}
+.dc h3{color:var(--gold)}
+.rsvp{background:var(--navy);border-color:var(--gold);outline:1px solid var(--gold2);outline-offset:-10px;color:#efe6cf}
+.rsvp .lbl,.rsvp h2{color:var(--gold2)}
+.rsvp .btn{border-color:var(--gold2);color:var(--gold2)}
+.rsvp .btn:hover{background:var(--gold2);color:var(--navy)}
+footer{color:var(--gold)}
+#mus{border-color:var(--gold);color:var(--navy)}
+
+/* ---------- Visor de fotos ---------- */
+#lb{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(18,24,42,.95);opacity:0;pointer-events:none;transition:opacity .4s}
+#lb.on{opacity:1;pointer-events:auto}
+#lb img{max-width:92vw;max-height:80svh;object-fit:contain;padding:6px;border:1px solid var(--gold);background:#0f1526}
+#lb button{position:absolute;border:0;background:none;color:var(--gold2);font-size:2.6rem;line-height:1;padding:.6rem 1rem;cursor:pointer}
+#lb .x{top:.5rem;right:.5rem}#lb .p,#lb .n{top:50%;translate:0 -50%}#lb .p{left:.3rem}#lb .n{right:.3rem}
+#lb span{position:absolute;bottom:1.4rem;color:var(--gold2);font:italic 1.1rem var(--serif)}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+</head>
+<body class="lock">
+
+<audio id="aud" loop preload="none"></audio>
+<button id="mus" aria-label="Activar o silenciar la música" hidden>♪</button>
+
+<!-- Portada: sobre cerrado; al tocar el sello se abre y sale la carta -->
+<div id="cover">
+  <div class="stage">
+    <div class="env">
+      <div class="back"></div>
+      <div class="card"><i>Bodas de plata</i><b>Oscar y Carolina</b><hr><i>13 de diciembre de 2026</i></div>
+      <div class="front"></div>
+      <div class="flap"></div>
+      <button class="wax" id="open" aria-label="Abrir la invitación">O&amp;C</button>
+    </div>
+    <p class="lbl tip">Toca el sello para abrir</p>
+  </div>
+</div>
+
+<main>
+  <!-- Encabezado -->
+  <section class="hero" id="inicio">
+    <div>
+      <p class="lbl">Nuestras bodas de plata</p>
+      <h1>Oscar y Carolina</h1>
+      <p>Veinticinco años, una hermosa familia y una vida compartida. El tiempo nos ha enseñado que el amor verdadero no es el que siempre suena en una melodía perfecta, sino el que sabe encontrar su propia armonía en los días de tormenta y continuar bailando juntos. Hoy miramos el camino recorrido con profunda gratitud y renovamos el compromiso de continuar escribiendo esta maravillosa historia juntos.</p>
+    </div>
+    <figure class="arch">
+      <img class="main" src="img/portada-1.jpg" alt="Oscar y Carolina el día de su boda">
+      <img class="mini" src="img/portada-2.jpg" alt="Oscar y Carolina hoy">
+      <figcaption>Entonces y hoy</figcaption>
+    </figure>
+  </section>
+
+  <!-- Datos de la ceremonia -->
+  <section id="ceremonia">
+    <p class="lbl">Faltan</p>
+    <div class="cd" aria-live="off">
+      <div><b id="d">00</b><span>días</span></div><div><b id="h">00</b><span>horas</span></div>
+      <div><b id="m">00</b><span>minutos</span></div><div><b id="s">00</b><span>segundos</span></div>
+    </div>
+    <div class="info">
+      <div><p class="lbl">Fecha</p><h3>Domingo 13 de diciembre</h3><p>de 2026</p></div>
+      <div><p class="lbl">Horarios</p><h3>Ceremonia</h3><p class="t">3:30 p.m.</p><h3>Recepción</h3><p class="t">5:00 p.m.</p></div>
+      <div><p class="lbl">Lugar</p><h3>Finca Villa Lolita</h3>
+        <a class="btn" href="https://maps.app.goo.gl/AbTa1A9xj1jfecCz7?g_st=iw" target="_blank" rel="noopener">Ver ubicación</a></div>
+    </div>
+  </section>
+
+  <!-- Slider -->
+  <section id="album">
+    <p class="lbl">Un recorrido por nuestra historia</p>
+    <div class="sld">
+      <img class="sl" src="img/album-1.jpg" alt="Oscar y Carolina en una terraza iluminada" loading="lazy">
+      <img class="sl" src="img/album-2.jpg" alt="Oscar y Carolina abrazados" loading="lazy" style="object-position:50% 25%">
+      <img class="sl" src="img/album-3.jpg" alt="Selfie en el mar" loading="lazy">
+      <img class="sl" src="img/album-4.jpg" alt="Frente a un arco de bambú" loading="lazy">
+      <img class="sl" src="img/album-5.jpg" alt="Brazos abiertos frente a la laguna" loading="lazy" style="object-position:55% 50%">
+      <img class="sl" src="img/album-6.jpg" alt="Junto a la fuente del jardín" loading="lazy">
+      <img class="sl" src="img/album-7.jpg" alt="En el muelle de noche" loading="lazy" style="object-position:50% 0">
+      <button class="arw" id="prev" aria-label="Foto anterior">‹</button>
+      <button class="arw" id="next" aria-label="Foto siguiente">›</button>
+    </div>
+    <div id="dots"></div>
+    <p class="hint">Toca una foto para verla en grande</p>
+  </section>
+
+  <!-- Dress code -->
+  <section id="vestimenta">
+    <p class="lbl">Código de vestimenta</p>
+    <div class="dc">
+      <div><h3>Ellos</h3><p>Camisa de manga larga y pantalón blanco o beige.</p></div>
+      <div><h3>Ellas</h3><p>Vestido largo, en un solo tono.</p></div>
+    </div>
+    <div class="res">
+      <p class="lbl">Estos colores son solo de la novia</p>
+      <div class="sw"><i style="background:#fff"></i><i style="background:var(--olive)"></i><i style="background:var(--brown)"></i></div>
+      <p>Te pedimos no usarlos.</p>
+    </div>
+  </section>
+</main>
+
+<!-- Confirmación de asistencia -->
+<div class="rsvp" id="confirmar">
+  <p class="lbl">Tu presencia es nuestro mejor regalo</p>
+  <h2>Confirma tu asistencia</h2>
+  <!-- EDITAR-FORM: pega aquí el link del Google Form -->
+  <a class="btn" href="#" target="_blank" rel="noopener">Confirmar en el formulario</a>
+</div>
+<footer>Oscar y Carolina · 13.12.2026</footer>
+
+<!-- Visor de fotos -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotos">
+  <button class="x" aria-label="Cerrar">&times;</button><button class="p" aria-label="Foto anterior">&lsaquo;</button>
+  <img alt=""><button class="n" aria-label="Foto siguiente">&rsaquo;</button><span></span>
+</div>
+
+<script>
+/* ===== Configuración ===== */
+const EVENT_DATE = new Date('2026-12-13T15:30:00-05:00'); // ceremonia, hora de Colombia
+const MUSIC_SRC  = 'audio/musica.mp3';                    // pega tu mp3 aquí
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+/* ===== Sonido de apertura: se sintetiza con Web Audio (no necesita archivos) =====
+   Roce de papel al abrir la solapa + campanita suave cuando sale la carta. */
+function sfx(){
+  try{
+    const A = new (window.AudioContext || window.webkitAudioContext)(), t = A.currentTime;
+    const buf = A.createBuffer(1, A.sampleRate * 1.2, A.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    const n = A.createBufferSource(); n.buffer = buf;
+    const f = A.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 2800; f.Q.value = .7;
+    const g = A.createGain(); g.gain.setValueAtTime(.0001, t);
+    g.gain.exponentialRampToValueAtTime(.25, t + .15); g.gain.exponentialRampToValueAtTime(.0001, t + 1.1);
+    n.connect(f).connect(g).connect(A.destination); n.start(t);
+    [1318.5, 1975.5, 2637].forEach((hz, i) => {
+      const o = A.createOscillator(), og = A.createGain(), s = t + .9 + i * .12;
+      o.type = 'sine'; o.frequency.value = hz;
+      og.gain.setValueAtTime(.0001, s); og.gain.exponentialRampToValueAtTime(.12, s + .02); og.gain.exponentialRampToValueAtTime(.0001, s + 1.6);
+      o.connect(og).connect(A.destination); o.start(s); o.stop(s + 1.7);
+    });
+  }catch(e){}
+}
+
+/* ===== Apertura de la carta (también inicia la música: el clic lo permite) ===== */
+const aud = $('#aud'), mus = $('#mus');
+aud.src = MUSIC_SRC;
+mus.hidden = false;
+aud.addEventListener('error', () => mus.hidden = true);   // sin mp3, el botón se oculta solo
+aud.onplay = () => mus.classList.add('on');
+aud.onpause = () => mus.classList.remove('on');
+mus.onclick = () => aud.paused ? aud.play() : aud.pause();
+$('#open').onclick = () => {
+  const c = $('#cover');
+  c.classList.add('open');                                 // 0 s: se abre la solapa
+  sfx();
+  aud.volume = 0;                                          // la canción entra con fundido (en iOS el volumen es fijo)
+  aud.play().then(() => { let v = 0; const fd = setInterval(() => { v = Math.min(.7, v + .02); aud.volume = v; if (v >= .7) clearInterval(fd); }, 120); }).catch(() => {});
+  setTimeout(() => c.classList.add('out'), 900);           // 0.9 s: sale la carta
+  setTimeout(() => {                                       // 2.7 s: entra el sitio
+    c.classList.add('fin');
+    document.body.classList.remove('lock');
+    document.body.classList.add('open');
+  }, 2700);
+  setTimeout(() => c.remove(), 3900);
+};
+
+/* ===== Cuenta regresiva ===== */
+const cd = ['d','h','m','s'].map(k => $('#' + k));
+function tick(){
+  let t = Math.max(0, EVENT_DATE - Date.now()) / 1000;
+  [86400, 3600, 60, 1].forEach((u, i) => { cd[i].textContent = String(Math.floor(t / u)).padStart(2, '0'); t %= u; });
+}
+tick(); setInterval(tick, 1000);
+
+/* ===== Slider: fundido, puntos, flechas, swipe y autoplay ===== */
+const sl = $$('.sl'), dots = $('#dots'); let cur = 0, timer;
+sl.forEach((_, i) => { const b = document.createElement('button'); b.setAttribute('aria-label', 'Ir a la foto ' + (i + 1)); b.onclick = () => go(i, true); dots.append(b); });
+function go(i, manual){
+  cur = (i + sl.length) % sl.length;
+  sl.forEach((s, n) => s.classList.toggle('on', n === cur));
+  [...dots.children].forEach((d, n) => d.classList.toggle('on', n === cur));
+  if (manual) play();
+}
+function play(){ clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }
+$('#prev').onclick = () => go(cur - 1, true);
+$('#next').onclick = () => go(cur + 1, true);
+let x0; const box = $('.sld');
+box.ontouchstart = e => x0 = e.touches[0].clientX;
+box.ontouchend = e => { const d = e.changedTouches[0].clientX - x0; if (Math.abs(d) > 40) go(cur + (d < 0 ? 1 : -1), true); };
+go(0); play();
+
+/* ===== Visor de fotos: portadas + álbum, flechas, teclado (Esc, ← →), swipe y clic fuera para cerrar ===== */
+const lb = $('#lb'), lbImg = $('#lb img'), lbN = $('#lb span');
+const G = [...$$('.arch img'), ...sl]; let li = 0;
+function show(i){ li = (i + G.length) % G.length; lbImg.src = G[li].src; lbImg.alt = G[li].alt; lbN.textContent = (li + 1) + ' / ' + G.length; }
+function openLB(i){ show(i); lb.classList.add('on'); document.body.classList.add('lock'); clearInterval(timer); }
+function closeLB(){ lb.classList.remove('on'); document.body.classList.remove('lock'); play(); }
+$$('.arch img').forEach((im, i) => im.onclick = () => openLB(i));
+box.onclick = e => { if (!e.target.closest('.arw')) openLB(cur + 2); };   // +2: las 2 portadas van primero
+$('#lb .x').onclick = closeLB;
+$('#lb .p').onclick = () => show(li - 1);
+$('#lb .n').onclick = () => show(li + 1);
+lb.onclick = e => { if (e.target === lb) closeLB(); };
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowRight') show(li + 1);
+  if (e.key === 'ArrowLeft') show(li - 1);
+});
+let lx; lb.ontouchstart = e => lx = e.touches[0].clientX;
+lb.ontouchend = e => { const d = e.changedTouches[0].clientX - lx; if (Math.abs(d) > 50) show(li + (d < 0 ? 1 : -1)); };
+</script>
+</body>
+</html>
