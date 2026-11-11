@@ -43,14 +43,17 @@
         --script: "Great Vibes", "Brush Script MT", cursive;
         --sans: "Figtree", system-ui, sans-serif;
       }
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         position: relative;
         background: var(--bg);
@@ -58,14 +61,17 @@
         font: 300 1.0625rem/1.75 var(--sans);
         overflow-x: hidden;
       }
+
       body.lock {
         overflow: hidden;
         height: 100svh;
       }
+
       img {
         display: block;
         max-width: 100%;
       }
+
       h1,
       h2,
       h3 {
@@ -73,19 +79,23 @@
         font-weight: 400;
         line-height: 1.05;
       }
+
       :focus-visible {
         outline: 2px solid var(--olive);
         outline-offset: 3px;
       }
+
       section {
         max-width: 1040px;
         margin: auto;
         padding: clamp(4.5rem, 11vw, 8rem) 1.5rem;
       }
+
       .lbl {
         font: italic 400 1.1rem var(--serif);
         color: var(--silver);
       }
+
       .btn {
         display: inline-block;
         margin-top: 1.4rem;
@@ -101,6 +111,7 @@
           background 0.4s,
           color 0.4s;
       }
+
       .btn:hover {
         background: var(--ink);
         color: var(--bg);
@@ -115,6 +126,7 @@
         overflow: hidden;
         pointer-events: none;
       }
+
       .ambient-wave {
         position: absolute;
         inset: 0;
@@ -122,6 +134,7 @@
         height: 100%;
         display: block;
       }
+
       .ambient-botanical {
         position: absolute;
         top: -2px;
@@ -132,6 +145,7 @@
         opacity: 0.53;
         filter: drop-shadow(0 2px 1px rgba(120, 94, 50, 0.04));
       }
+
       .top-accent {
         position: absolute;
         top: 0;
@@ -142,19 +156,23 @@
         z-index: 2;
         pointer-events: none;
       }
+
       main,
       .rsvp,
       footer {
         position: relative;
         z-index: 1;
       }
+
       @media (max-width: 600px) {
         .ambient {
           height: 245px;
         }
+
         .ambient-wave {
           height: 220px;
         }
+
         .ambient-botanical {
           width: min(340px, 88vw);
           opacity: 0.42;
@@ -177,13 +195,16 @@
         );
         transition: opacity 1.1s ease;
       }
+
       #cover.fin {
         opacity: 0;
         pointer-events: none;
       }
+
       .stage {
         width: min(88vw, 520px);
       }
+
       .env {
         position: relative;
         aspect-ratio: 3/2;
@@ -191,14 +212,17 @@
         isolation: isolate;
         filter: drop-shadow(0 25px 27px rgba(47, 52, 22, 0.28));
       }
+
       .env > * {
         position: absolute;
       }
+
       .back {
         inset: 0;
         background: linear-gradient(140deg, #f7f3e7, #e8e1cf);
         border: 1px solid rgba(169, 130, 64, 0.38);
       }
+
       .card {
         left: 6%;
         right: 6%;
@@ -216,32 +240,38 @@
           transform 1.3s cubic-bezier(0.65, 0, 0.25, 1),
           z-index 0s 0.35s;
       }
+
       .card::before {
         content: "";
         position: absolute;
         inset: 6px;
         border: 1px solid var(--gold2);
       }
+
       .card::after {
         content: "";
         position: absolute;
         inset: 11px;
         border: 1px solid rgba(169, 130, 64, 0.35);
       }
+
       .card i {
         font: italic 400 1.1rem var(--serif);
       }
+
       .card b {
         font: italic 400 clamp(1.9rem, 7.5vw, 2.7rem)/1.1 var(--serif);
         margin: 0.4rem 0 0.2rem;
         color: #4d5329;
       }
+
       .card svg {
         width: 96px;
         margin: 0.2rem 0 0.3rem;
         stroke: var(--gold);
         fill: var(--gold);
       }
+
       /* La pieza oliva cubre parcialmente la tarjeta, como una funda de papelería fina. */
       .front {
         inset: 0;
@@ -258,12 +288,14 @@
           opacity 0.75s ease,
           transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
       }
+
       .front::before {
         content: "";
         position: absolute;
         inset: 8px 32% 8px 8px;
         border: 1px solid rgba(225, 207, 155, 0.26);
       }
+
       .front::after {
         content: "";
         position: absolute;
@@ -274,6 +306,7 @@
         background: rgba(255, 255, 255, 0.12);
         box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
       }
+
       .wrap-band {
         inset: 0 auto 0 39%;
         z-index: 4;
@@ -291,12 +324,14 @@
           opacity 0.55s ease,
           transform 0.8s ease;
       }
+
       .cord {
         inset: 0;
         z-index: 5;
         pointer-events: none;
         transition: opacity 0.45s ease;
       }
+
       .cord::before {
         content: "";
         position: absolute;
@@ -307,6 +342,7 @@
         background: linear-gradient(180deg, #e6d5a8, #a98c55 48%, #f0e2bd);
         box-shadow: 0 1px 2px rgba(44, 37, 20, 0.35);
       }
+
       .cord::after {
         content: "";
         position: absolute;
@@ -317,6 +353,7 @@
         background: linear-gradient(90deg, #a98c55, #f0e2bd 55%, #b69a62);
         opacity: 0.9;
       }
+
       .botanical {
         z-index: 5;
         left: 5%;
@@ -329,22 +366,26 @@
           opacity 0.5s ease,
           transform 0.7s ease;
       }
+
       .botanical .stem {
         fill: none;
         stroke: #ded6b6;
         stroke-width: 1.25;
         stroke-linecap: round;
       }
+
       .botanical .leaf {
         fill: #d9d1b2;
         stroke: #b9b18f;
         stroke-width: 0.65;
       }
+
       .botanical .flower {
         fill: #f5f0df;
         stroke: #d1c8a8;
         stroke-width: 0.55;
       }
+
       .wax {
         left: 51%;
         top: 57%;
@@ -375,6 +416,7 @@
           scale 0.45s,
           transform 0.45s;
       }
+
       .wax::before {
         content: "";
         position: absolute;
@@ -383,6 +425,7 @@
         border: 1px solid rgba(102, 69, 28, 0.52);
         box-shadow: inset 0 0 0 2px rgba(255, 229, 168, 0.14);
       }
+
       .wax::after {
         content: "";
         position: absolute;
@@ -390,6 +433,7 @@
         border-radius: 50%;
         border: 1px dotted rgba(91, 61, 27, 0.5);
       }
+
       @keyframes ring {
         from {
           box-shadow:
@@ -397,6 +441,7 @@
             0 0 0 0 rgba(217, 191, 132, 0.62),
             inset 0 2px 4px rgba(255, 244, 207, 0.52);
         }
+
         to {
           box-shadow:
             0 5px 9px rgba(0, 0, 0, 0.28),
@@ -404,35 +449,43 @@
             inset 0 2px 4px rgba(255, 244, 207, 0.52);
         }
       }
+
       .tip {
         margin-top: 1.8rem;
         transition: opacity 0.5s;
       }
+
       #cover.open .wax {
         opacity: 0;
         scale: 0.5;
         animation: none;
         pointer-events: none;
       }
+
       #cover.open .front {
         opacity: 0;
         transform: translateX(-3%);
       }
+
       #cover.open .wrap-band,
       #cover.open .cord,
       #cover.open .botanical {
         opacity: 0;
       }
+
       #cover.open .botanical {
         transform: translateY(-12px);
       }
+
       #cover.open .tip {
         opacity: 0;
       }
+
       #cover.out .card {
         transform: translateY(-62%);
         z-index: 8;
       }
+
       /* ---------- Encabezado ---------- */
       .hero {
         display: grid;
@@ -440,26 +493,31 @@
         align-items: center;
         min-height: 100svh;
       }
+
       @media (min-width: 860px) {
         .hero {
           grid-template-columns: 1.1fr 0.9fr;
         }
       }
+
       .hero h1 {
         font-size: clamp(3.4rem, 11vw, 6.6rem);
         margin: 0.8rem 0 1.8rem;
         letter-spacing: -0.02em;
       }
+
       .hero p {
         font: 400 1.18rem/1.85 var(--serif);
         max-width: 36rem;
         color: #3b4135;
       }
+
       .arch {
         position: relative;
         justify-self: center;
         width: min(100%, 380px);
       }
+
       .arch .main {
         width: 100%;
         aspect-ratio: 3/4;
@@ -467,6 +525,7 @@
         object-position: 50% 20%;
         border-radius: 999px 999px 0 0;
       }
+
       .arch .mini {
         position: absolute;
         left: -12%;
@@ -478,6 +537,7 @@
         border-radius: 50%;
         border: 7px solid var(--bg);
       }
+
       .arch figcaption {
         position: absolute;
         right: -1rem;
@@ -486,11 +546,13 @@
         color: var(--silver);
         font: italic 1rem var(--serif);
       }
+
       /* Un solo momento animado: al abrir la carta, el encabezado entra */
       .hero > * {
         opacity: 0;
         transition: opacity 1.4s ease 0.5s;
       }
+
       body.open .hero > * {
         opacity: 1;
       }
@@ -502,38 +564,130 @@
         margin: 2.5rem 0 3.5rem;
         border-block: 1px solid var(--line);
       }
+
       .cd div {
         padding: 1.6rem 0;
         text-align: center;
         border-left: 1px solid var(--line);
       }
+
       .cd div:first-child {
         border: 0;
       }
+
       .cd b {
         display: block;
         font: 400 clamp(2.4rem, 9vw, 4.6rem)/1 var(--serif);
       }
+
       .cd span {
         font-size: 0.9rem;
         color: var(--silver);
       }
+
       .info {
         display: grid;
-        gap: 2.5rem;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        align-items: stretch;
+        margin-top: 0.5rem;
       }
+
       @media (min-width: 760px) {
         .info {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.35rem;
         }
       }
+
+      /* Tarjetas ilustradas del itinerario: solo enriquecen el bloque de fecha y lugar. */
+      .info-card {
+        position: relative;
+        isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 0;
+        padding: 1.25rem 1.1rem 1.5rem;
+        text-align: center;
+        overflow: hidden;
+        border: 1px solid rgba(169, 130, 64, 0.28);
+        border-top: 2px solid var(--gold);
+        background: linear-gradient(155deg, rgba(250, 248, 241, 0.94), rgba(242, 235, 219, 0.9));
+        box-shadow: 0 12px 30px rgba(75, 65, 37, 0.065);
+      }
+
+      .info-card::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 190px;
+        height: 190px;
+        top: 18px;
+        left: 50%;
+        translate: -50% 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(217, 191, 132, 0.2), rgba(217, 191, 132, 0) 69%);
+        pointer-events: none;
+      }
+
+      .info-art {
+        display: block;
+        width: min(100%, 310px);
+        height: 172px;
+        margin: 0 auto 0.7rem;
+        overflow: visible;
+      }
+
+      .info-art--date {
+        width: 145px;
+        height: 154px;
+        margin-bottom: 0.7rem;
+      }
+
+      .info-card .lbl {
+        margin-top: 0.1rem;
+      }
+
       .info h3 {
         font-size: 2rem;
         margin: 0.3rem 0;
       }
+
       .info .t {
         font: italic 400 1.15rem var(--serif);
         color: var(--olive);
+      }
+
+      .info-card .info-secondary {
+        margin-top: 0.95rem;
+        padding-top: 0.75rem;
+        width: min(100%, 220px);
+        border-top: 1px solid rgba(169, 130, 64, 0.25);
+      }
+
+      .info-card .info-secondary h3 {
+        font-size: 1.8rem;
+      }
+
+      .info-card .btn {
+        margin-top: 1rem;
+        padding: 0.75rem 1.35rem;
+      }
+
+      @media (max-width: 520px) {
+        .info-card {
+          padding: 1.1rem 1rem 1.35rem;
+        }
+
+        .info-art {
+          height: 158px;
+        }
+
+        .info-art--date {
+          height: 132px;
+        }
       }
 
       /* ---------- Slider (fundido) ---------- */
@@ -545,6 +699,7 @@
         overflow: hidden;
         background: var(--line);
       }
+
       .sl {
         position: absolute;
         inset: 0;
@@ -557,10 +712,12 @@
           opacity 1.2s ease,
           transform 6s ease;
       }
+
       .sl.on {
         opacity: 1;
         transform: none;
       }
+
       .arw {
         position: absolute;
         top: 50%;
@@ -573,18 +730,22 @@
         font-size: 1.3rem;
         cursor: pointer;
       }
+
       #prev {
         left: 0.8rem;
       }
+
       #next {
         right: 0.8rem;
       }
+
       #dots {
         display: flex;
         justify-content: center;
         gap: 0.6rem;
         margin-top: 1.2rem;
       }
+
       #dots button {
         width: 9px;
         height: 9px;
@@ -594,39 +755,74 @@
         cursor: pointer;
         padding: 0;
       }
+
       #dots .on {
         background: var(--ink);
       }
 
-      /* ---------- Dress code ---------- */
+      /* ---------- Dress code: tarjetas separadas ---------- */
       .dc {
         display: grid;
-        gap: 2.5rem;
-        margin-top: 2.5rem;
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+        margin-top: 2rem;
       }
+
       @media (min-width: 760px) {
         .dc {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.8rem;
         }
       }
-      .dc div {
-        background: var(--card);
-        padding: 2rem;
+
+      .dc-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.1rem 1.25rem 1.8rem;
+        min-width: 0;
+        background: linear-gradient(145deg, #f8f4e9, #f2ebdb);
+        border: 1px solid rgba(169, 130, 64, 0.28);
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 12px 30px rgba(75, 65, 37, 0.07);
       }
+
+      .dc-figure {
+        display: block;
+        height: clamp(285px, 31vw, 330px);
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto 0.5rem;
+        object-fit: contain;
+        object-position: center;
+        mix-blend-mode: multiply;
+        filter: drop-shadow(0 7px 9px rgba(82, 63, 33, 0.09));
+      }
+
       .dc h3 {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
+        font-size: 2.55rem;
+        margin: 0.1rem 0 0.45rem;
+        color: var(--gold);
       }
+
+      .dc p {
+        max-width: 19rem;
+        margin-inline: auto;
+      }
+
       .res {
         margin-top: 2.5rem;
         text-align: center;
       }
+
       .sw {
         display: flex;
         justify-content: center;
         gap: 1.6rem;
         margin: 1.2rem 0 0.8rem;
       }
+
       .sw i {
         width: 64px;
         height: 64px;
@@ -641,10 +837,12 @@
         margin: 0 1.5rem 3rem;
         padding: clamp(3rem, 8vw, 5rem) 1.5rem;
       }
+
       .rsvp h2 {
         font-size: clamp(2.2rem, 7vw, 3.6rem);
         margin: 0.5rem 0 1rem;
       }
+
       footer {
         text-align: center;
         padding: 2rem 1.5rem 4.5rem;
@@ -681,6 +879,7 @@
           background 0.25s ease,
           box-shadow 0.25s ease;
       }
+
       #mus:hover {
         transform: translateY(-2px);
         background: #fffdf7;
@@ -688,31 +887,39 @@
           0 11px 27px rgba(48, 43, 28, 0.2),
           inset 0 0 0 3px rgba(217, 191, 132, 0.2);
       }
+
       #mus:active {
         transform: translateY(0);
       }
+
       #mus .mus-icon {
         width: 17px;
         height: 17px;
         fill: currentColor;
         flex: 0 0 auto;
       }
+
       #mus .pause-icon {
         display: none;
       }
+
       #mus.on .play-icon {
         display: none;
       }
+
       #mus.on .pause-icon {
         display: block;
       }
+
       #mus.on {
         border-color: var(--gold);
         background: #f5efdf;
       }
+
       #mus[hidden] {
         display: none;
       }
+
       @media (max-width: 480px) {
         #mus {
           min-height: 46px;
@@ -720,6 +927,7 @@
           font-size: 0.74rem;
         }
       }
+
       /* ---------- Paleta cálida: dorado y marrón claro ---------- */
       :root {
         --gold: #a98240;
@@ -728,80 +936,99 @@
         --tan: #a9805d;
         --deep: #3b4120;
       }
+
       .lbl {
         color: var(--gold);
       }
+
       .btn {
         border-color: var(--gold);
         color: var(--deep);
       }
+
       .btn:hover {
         background: var(--deep);
         color: var(--gold2);
         border-color: var(--deep);
       }
+
       .hero h1 {
         background: linear-gradient(100deg, #4d5329, #6b7140 38%, #a98240);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
+
       .arch .main {
         outline: 1px solid var(--gold);
         outline-offset: 10px;
         cursor: zoom-in;
       }
+
       .arch .mini {
         border-color: var(--sand);
         box-shadow: 0 0 0 1px var(--gold);
         cursor: zoom-in;
       }
+
       .arch figcaption,
       .cd span,
       .hint {
         color: var(--tan);
       }
+
       .info .t {
         color: var(--olive);
       }
+
       #ceremonia,
       #vestimenta {
         background: var(--sand);
         box-shadow: 0 0 0 100vmax var(--sand);
         clip-path: inset(0 -100vmax);
       }
+
       .cd,
       .cd div {
         border-color: var(--gold2);
       }
+
       .cd b {
         color: var(--gold);
       }
+
       .sld {
         outline: 1px solid var(--gold);
         outline-offset: 10px;
         cursor: zoom-in;
       }
+
       .sl {
         pointer-events: none;
       }
+
       #dots button {
         border-color: var(--gold);
       }
+
       #dots .on {
         background: var(--gold);
       }
+
       .hint {
         text-align: center;
         font-size: 0.9rem;
         margin-top: 0.6rem;
       }
-      .dc div {
+
+      .dc-card {
         border-top: 2px solid var(--gold);
       }
+
       .dc h3 {
         color: var(--gold);
       }
+
       .rsvp {
         background: var(--deep);
         border-color: var(--gold);
@@ -809,21 +1036,26 @@
         outline-offset: -10px;
         color: #efe6cf;
       }
+
       .rsvp .lbl,
       .rsvp h2 {
         color: var(--gold2);
       }
+
       .rsvp .btn {
         border-color: var(--gold2);
         color: var(--gold2);
       }
+
       .rsvp .btn:hover {
         background: var(--gold2);
         color: var(--deep);
       }
+
       footer {
         color: var(--gold);
       }
+
       #mus {
         border-color: var(--gold);
         color: var(--deep);
@@ -841,10 +1073,12 @@
         pointer-events: none;
         transition: opacity 0.4s;
       }
+
       #lb.on {
         opacity: 1;
         pointer-events: auto;
       }
+
       #lb img {
         max-width: 92vw;
         max-height: 80svh;
@@ -853,6 +1087,7 @@
         border: 1px solid var(--gold);
         background: #23260f;
       }
+
       #lb button {
         position: absolute;
         border: 0;
@@ -863,27 +1098,33 @@
         padding: 0.6rem 1rem;
         cursor: pointer;
       }
+
       #lb .x {
         top: 0.5rem;
         right: 0.5rem;
       }
+
       #lb .p,
       #lb .n {
         top: 50%;
         translate: 0 -50%;
       }
+
       #lb .p {
         left: 0.3rem;
       }
+
       #lb .n {
         right: 0.3rem;
       }
+
       #lb span {
         position: absolute;
         bottom: 1.4rem;
         color: var(--gold2);
         font: italic 1.1rem var(--serif);
       }
+
       /* ---------- Títulos caligráficos y figuras editoriales del dress code ---------- */
       h1,
       h2,
@@ -894,71 +1135,62 @@
         line-height: 1.12;
         letter-spacing: 0;
       }
+
       .hero h1 {
         font-size: clamp(4.1rem, 13vw, 7.1rem);
         margin: 0.65rem 0 1.35rem;
       }
+
       .info h3 {
         font-size: clamp(2.25rem, 4vw, 2.75rem);
         margin: 0.3rem 0;
       }
+
       .dc h3 {
         font-size: 2.55rem;
         margin-bottom: 0.45rem;
       }
+
       .rsvp h2 {
         font-size: clamp(3.1rem, 8vw, 4.7rem);
         margin: 0.5rem 0 1rem;
       }
-      .fg {
-        display: block;
-        width: clamp(130px, 42%, 160px);
-        height: auto;
-        margin: 0 auto 1rem;
-        overflow: visible;
-        filter: drop-shadow(0 5px 5px rgba(62, 49, 25, 0.1));
-      }
-      .fg .outline {
-        stroke: #8e744d;
-        stroke-width: 1.25;
-        stroke-linejoin: round;
-        stroke-linecap: round;
-      }
-      .fg .detail {
-        fill: none;
-        stroke: #9b8055;
-        stroke-width: 1.15;
-        stroke-linejoin: round;
-        stroke-linecap: round;
-      }
-      .fg .soft-detail {
-        fill: none;
-        stroke: rgba(255, 250, 236, 0.8);
-        stroke-width: 1.4;
-        stroke-linecap: round;
-      }
-      .dc > div {
-        background: linear-gradient(145deg, #fbf9f1, #f1ecdd);
-        border: 1px solid rgba(169, 130, 64, 0.24);
+
+      .dc-card {
+        background: linear-gradient(145deg, #f8f4e9, #f2ebdb);
+        border: 1px solid rgba(169, 130, 64, 0.28);
         border-top: 2px solid var(--gold);
-        box-shadow: 0 12px 30px rgba(75, 65, 37, 0.06);
+        box-shadow: 0 12px 30px rgba(75, 65, 37, 0.07);
         text-align: center;
       }
+
       .dc p {
         max-width: 19rem;
         margin-inline: auto;
       }
+
       @media (max-width: 520px) {
+        .dc-figure {
+          height: 300px;
+        }
+
+        .dc {
+          gap: 1.15rem;
+        }
+
         .stage {
           width: min(88vw, 420px);
         }
+
         .wax {
           width: 68px;
         }
+
         .hero h1 {
           font-size: clamp(3.7rem, 15vw, 5.1rem);
         }
       }
+
       @media (prefers-reduced-motion: reduce) {
         * {
           transition-duration: 0.01ms !important;
@@ -967,6 +1199,7 @@
       }
     </style>
   </head>
+
   <body class="lock">
     <!-- Adornos ambientales inspirados en las referencias: ondas doradas y follaje botánico. -->
     <div class="ambient" aria-hidden="true">
@@ -1118,7 +1351,12 @@
           <p class="lbl">Nuestras bodas de plata</p>
           <h1>Oscar y Carolina</h1>
           <p>
-           Veinticinco años de amor, sueños compartidos y una hermosa familia. Juntos hemos aprendido que el amor verdadero no busca la perfección, sino que encuentra su armonía en cada momento y su fuerza en cada tormenta. Hoy celebramos nuestra historia con el corazón lleno de gratitud y la ilusión de seguir caminando de la mano, eligiéndonos cada día.
+            Veinticinco años de amor, sueños compartidos y una hermosa familia.
+            Juntos hemos aprendido que el amor verdadero no busca la perfección,
+            sino que encuentra su armonía en cada momento y su fuerza en cada
+            tormenta. Hoy celebramos nuestra historia con el corazón lleno de
+            gratitud y la ilusión de seguir caminando de la mano, eligiéndonos
+            cada día.
           </p>
         </div>
         <figure class="arch">
@@ -1146,19 +1384,167 @@
           <div><b id="s">00</b><span>segundos</span></div>
         </div>
         <div class="info">
-          <div>
+          <!-- Fecha: calendario ornamental para destacar el día de la celebración. -->
+          <article class="info-card">
+            <svg class="info-art info-art--date" viewBox="0 0 160 170" role="img" aria-label="Calendario ornamental con el día 13">
+              <defs>
+                <linearGradient id="datePaper" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fffdf7" />
+                  <stop offset="1" stop-color="#eee5cf" />
+                </linearGradient>
+                <linearGradient id="dateGold" x1="0" y1="0" x2="0.9" y2="1">
+                  <stop offset="0" stop-color="#d8bd83" />
+                  <stop offset="1" stop-color="#98713b" />
+                </linearGradient>
+              </defs>
+              <path d="M18 84C28 39 53 15 80 15s52 24 62 69" fill="none" stroke="#b5ad8b" stroke-width="1.2" stroke-dasharray="2 5" opacity=".65" />
+              <path d="M27 105C8 88 9 62 25 49c15 18 16 37 2 56ZM133 105c19-17 18-43 2-56-15 18-16 37-2 56Z" fill="#dfe0cd" stroke="#aab091" stroke-width="1" />
+              <path d="M31 105c15-16 31-27 49-34M129 105C114 89 98 78 80 71" fill="none" stroke="#9ca27b" stroke-width="1.2" stroke-linecap="round" />
+              <rect x="39" y="45" width="82" height="96" rx="7" fill="url(#datePaper)" stroke="url(#dateGold)" stroke-width="1.5" />
+              <path d="M39 65h82" stroke="#c4a66a" stroke-width="1.2" />
+              <path d="M57 39v15M103 39v15" stroke="#9d7641" stroke-width="4" stroke-linecap="round" />
+              <path d="M57 39v7M103 39v7" stroke="#f7efdc" stroke-width="1.2" stroke-linecap="round" />
+              <text x="80" y="57" text-anchor="middle" font-family="Georgia,serif" font-size="7.2" letter-spacing="2" fill="#9b7947">DICIEMBRE</text>
+              <text x="80" y="111" text-anchor="middle" font-family="Georgia,serif" font-size="43" fill="#697046">13</text>
+              <path d="M58 122h44" stroke="#c5a66a" stroke-width="1" />
+              <path d="M80 126c4 2 4 6 0 8-4-2-4-6 0-8Z" fill="#b08a4b" />
+              <g fill="#c7a464">
+                <circle cx="25" cy="117" r="2.1" /><circle cx="20" cy="109" r="1.5" /><circle cx="31" cy="124" r="1.4" />
+                <circle cx="135" cy="117" r="2.1" /><circle cx="140" cy="109" r="1.5" /><circle cx="129" cy="124" r="1.4" />
+              </g>
+              <path d="M18 145c18 8 32 9 45 5M142 145c-18 8-32 9-45 5" fill="none" stroke="#bda36e" stroke-width="1" stroke-linecap="round" opacity=".8" />
+            </svg>
             <p class="lbl">Fecha</p>
             <h3>Domingo 13 de diciembre</h3>
             <p>de 2026</p>
-          </div>
-          <div>
+          </article>
+
+          <!-- Ceremonia: capilla campestre con campanario integrado y geometría corregida. -->
+          <article class="info-card">
+          <svg class="info-art" viewBox="0 0 360 190" role="img" aria-label="Ilustración de una capilla campestre con campanario integrado, fachada y techo de tejas">
+            <defs>
+              <linearGradient id="chapelWall" x1="0" y1="0" x2="0.9" y2="1">
+                <stop offset="0" stop-color="#fffaf0" />
+                <stop offset="1" stop-color="#e8ddc5" />
+              </linearGradient>
+              <linearGradient id="chapelRoof" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#bd8662" />
+                <stop offset="1" stop-color="#89543f" />
+              </linearGradient>
+              <linearGradient id="chapelDoor" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#747653" />
+                <stop offset="1" stop-color="#343e2c" />
+              </linearGradient>
+            </defs>
+
+            <!-- Suelo y paisaje: una sola línea de base para toda la construcción. -->
+            <path d="M17 164c48-15 87-14 130-4 54 12 115-12 196-3v17H17Z" fill="#dedbc8" opacity=".58" />
+            <path d="M23 157c34-19 62-22 91-13M251 145c31-17 58-18 87-7" fill="none" stroke="#b6b596" stroke-width="1.35" stroke-linecap="round" />
+
+            <!-- Cuerpo principal de la capilla. -->
+            <path d="M96 96 194 43l98 53v66H96Z" fill="url(#chapelWall)" stroke="#9f895e" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M107 105v57M281 105v57" fill="none" stroke="#c5b18a" stroke-width="1.1" />
+
+            <!-- Techo principal: cumbrera continua, aleros y una única fascia. -->
+            <path d="M78 98 194 31l117 67-11 12-106-61L89 110Z" fill="url(#chapelRoof)" stroke="#875b45" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="m91 99 103-59 104 59M105 99l89-51 91 51" fill="none" stroke="#d7ad82" stroke-width="1.05" stroke-linecap="round" opacity=".85" />
+
+            <!-- Campanario lateral unido a la fachada; el tejadillo no atraviesa la cubierta principal. -->
+            <path d="M55 78h54v84H55Z" fill="url(#chapelWall)" stroke="#9f895e" stroke-width="1.4" stroke-linejoin="round" />
+            <path d="M47 78 82 48l36 30-8 9-28-23-27 23Z" fill="url(#chapelRoof)" stroke="#875b45" stroke-width="1.4" stroke-linejoin="round" />
+            <path d="M54 82 82 59l29 23" fill="none" stroke="#d7ad82" stroke-width="1" opacity=".85" />
+            <path d="M65 121v-17a17 17 0 0 1 34 0v17Z" fill="#eee4ce" stroke="#a58b5b" stroke-width="1.15" />
+            <path d="M70 120v-15a12 12 0 0 1 24 0v15Z" fill="url(#chapelDoor)" stroke="#8f754c" stroke-width="1" />
+            <path d="M78.5 97h7M82 97v-2" stroke="#d9bd7e" stroke-width="1" stroke-linecap="round" />
+            <path d="M82 97c-4 2-5.2 6-5.2 11h10.4c0-5-1.2-9-5.2-11Z" fill="#d9bd7e" stroke="#a98248" stroke-width=".75" stroke-linejoin="round" />
+            <path d="M79.5 109h5M82 109.5v1.8" stroke="#a98248" stroke-width=".8" stroke-linecap="round" />
+            <path d="M82 48V34m-6 5h12" stroke="#9d7a46" stroke-width="1.8" stroke-linecap="round" />
+
+            <!-- Rosetón y ventanas de la nave. -->
+            <circle cx="194" cy="82" r="12.5" fill="#f4edda" stroke="#b18d52" stroke-width="1.5" />
+            <circle cx="194" cy="82" r="7" fill="none" stroke="#b18d52" stroke-width=".9" />
+            <path d="M194 70v24m-12-12h24m-20-8 16 16m0-16-16 16" stroke="#b18d52" stroke-width=".8" />
+            <path d="M131 123v-10a8 8 0 0 1 16 0v10ZM241 123v-10a8 8 0 0 1 16 0v10Z" fill="#788064" stroke="#a88b5b" stroke-width="1" />
+            <path d="M139 108v15m110-15v15" stroke="#e6d6b6" stroke-width=".9" />
+
+            <!-- Puerta principal y escalón, centrados con respecto a la nave. -->
+            <path d="M173 162v-35a21 21 0 0 1 42 0v35Z" fill="url(#chapelDoor)" stroke="#9b7848" stroke-width="1.5" />
+            <path d="M194 128v34" stroke="#c5a16a" stroke-width="1.05" />
+            <circle cx="187.5" cy="147" r="1.6" fill="#e3c88e" />
+            <path d="M164 163h60l-6 6h-48Z" fill="#c6b38d" stroke="#9b865d" stroke-width="1" stroke-linejoin="round" />
+            <path d="M194 169 178 184h32Z" fill="#d9c9a7" opacity=".62" />
+
+            <!-- Vegetación baja a ambos lados, sin invadir la silueta del edificio. -->
+            <g fill="#a8ad88" stroke="#84906c" stroke-width=".85" stroke-linejoin="round">
+              <path d="M25 158c-2-15 4-25 14-33 4 15 0 25-14 33ZM37 158c3-16 13-24 25-23-4 15-12 23-25 23ZM307 157c-1-16 5-26 16-34 3 16-2 26-16 34ZM319 158c4-15 14-23 26-21-5 15-14 22-26 21Z" />
+            </g>
+            <g fill="#c6a36a">
+              <circle cx="28" cy="139" r="1.8" /><circle cx="51" cy="145" r="1.7" />
+              <circle cx="307" cy="137" r="1.8" /><circle cx="334" cy="144" r="1.7" />
+            </g>
+            <path d="M18 169h324" stroke="#b99c68" stroke-width="1" opacity=".55" />
+          </svg>
             <p class="lbl">Horarios</p>
             <h3>Ceremonia</h3>
             <p class="t">3:30 p.m.</p>
-            <h3>Recepción</h3>
-            <p class="t">5:00 p.m.</p>
-          </div>
-          <div>
+            <div class="info-secondary">
+              <h3>Recepción</h3>
+              <p class="t">5:00 p.m.</p>
+            </div>
+          </article>
+
+          <!-- Lugar: finca de estilo hacienda con tejas, corredor y paisaje campestre. -->
+          <article class="info-card">
+            <svg class="info-art" viewBox="0 0 360 190" role="img" aria-label="Ilustración de una finca campestre con corredor, jardín y montañas">
+              <defs>
+                <linearGradient id="fincaWall" x1="0" y1="0" x2="0.8" y2="1">
+                  <stop offset="0" stop-color="#fff9ec" />
+                  <stop offset="1" stop-color="#e5d7bb" />
+                </linearGradient>
+                <linearGradient id="fincaRoof" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#c18c68" />
+                  <stop offset="1" stop-color="#88513d" />
+                </linearGradient>
+              </defs>
+              <!-- Montañas y paisaje -->
+              <path d="M8 117 65 65l34 27 42-48 57 54 41-32 61 49Z" fill="#dfe1d1" opacity=".82" />
+              <path d="m35 112 45-42 25 23 36-42 45 47" fill="none" stroke="#a8ad8b" stroke-width="1.1" opacity=".75" />
+              <path d="M10 164c51-18 91-16 132-7 62 13 130-16 208-3v21H10Z" fill="#d9ddc5" opacity=".75" />
+              <!-- Árbol de la izquierda -->
+              <path d="M36 151c8-26 10-49 9-70" fill="none" stroke="#89714d" stroke-width="4" stroke-linecap="round" />
+              <g fill="#a9b08c" stroke="#8a9870" stroke-width="1">
+                <path d="M42 101C14 93 13 70 25 57c20 2 28 18 17 44ZM45 91c-2-28 14-42 30-39 9 19-1 36-30 39ZM41 121c-25-2-34-20-25-34 19-2 32 12 25 34Z" />
+              </g>
+              <!-- Casa y corredor -->
+              <path d="M78 99 184 43l105 56v68H78Z" fill="url(#fincaWall)" stroke="#9e875d" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="m64 101 120-67 125 67-9 10L184 49 73 111Z" fill="url(#fincaRoof)" stroke="#865741" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="m90 96 94-51 99 51M108 88l76-42 80 42M129 78l55-30 58 30" fill="none" stroke="#d6aa7d" stroke-width="1" opacity=".8" />
+              <path d="M87 114h202" stroke="#b39a6c" stroke-width="1.4" />
+              <!-- Columnas y arcos del corredor -->
+              <path d="M103 163v-31a17 17 0 0 1 34 0v31M157 163v-31a17 17 0 0 1 34 0v31M211 163v-31a17 17 0 0 1 34 0v31" fill="#d8c7a8" stroke="#a88d61" stroke-width="1.3" />
+              <path d="M120 115v48m54-48v48m54-48v48" stroke="#f8efdd" stroke-width="2" />
+              <path d="M93 164h201" stroke="#a98d60" stroke-width="2" />
+              <!-- Ventanas y puerta -->
+              <rect x="115" y="89" width="22" height="22" rx="2" fill="#778064" stroke="#a18153" stroke-width="1.2" />
+              <path d="M126 89v22m-11-11h22" stroke="#ead9b7" stroke-width="1" />
+              <rect x="232" y="89" width="22" height="22" rx="2" fill="#778064" stroke="#a18153" stroke-width="1.2" />
+              <path d="M243 89v22m-11-11h22" stroke="#ead9b7" stroke-width="1" />
+              <path d="M171 163v-33a13 13 0 0 1 26 0v33Z" fill="#596047" stroke="#8f754f" stroke-width="1.2" />
+              <path d="M184 132v31" stroke="#c7a66e" stroke-width="1" />
+              <circle cx="190" cy="148" r="1.5" fill="#e7cb91" />
+              <!-- Palmeras y arbustos -->
+              <path d="M311 163c-2-40 0-69 8-104" stroke="#8a704c" stroke-width="4" fill="none" stroke-linecap="round" />
+              <g fill="none" stroke="#82906c" stroke-width="3" stroke-linecap="round">
+                <path d="M319 61C299 42 280 39 266 49c19-1 35 4 53 12M319 61C309 36 314 20 326 12c5 18 1 35-7 49M319 61c13-22 30-27 39-18-12 13-24 17-39 22M319 61c-23-4-38 3-43 16 19-2 31-7 43-16M319 61c11-7 25-7 33 0" />
+              </g>
+              <g fill="#a9b08c" stroke="#84906c" stroke-width=".8">
+                <path d="M22 166c-2-12 3-21 13-27 4 12-1 22-13 27ZM39 166c4-14 13-20 24-18-3 13-12 19-24 18ZM277 167c-2-12 4-22 15-27 4 13-2 22-15 27Z" />
+              </g>
+              <g fill="#c5a16a">
+                <circle cx="22" cy="157" r="2" /><circle cx="49" cy="157" r="2" /><circle cx="273" cy="158" r="2" /><circle cx="289" cy="150" r="1.8" />
+              </g>
+              <path d="M12 174h336" stroke="#b99c68" stroke-width="1" opacity=".6" />
+            </svg>
             <p class="lbl">Lugar</p>
             <h3>Finca Villa Lolita</h3>
             <a
@@ -1168,7 +1554,7 @@
               rel="noopener"
               >Ver ubicación</a
             >
-          </div>
+          </article>
         </div>
       </section>
 
@@ -1228,49 +1614,48 @@
             loading="lazy"
             style="object-position: 50% 0"
           />
-           <img
+          <img
             class="sl"
             src="img/album-9.jpg"
             alt="Oscar, carolina y sus hijas"
             loading="lazy"
             style="object-position: 50% 0"
           />
-           <img
+          <img
             class="sl"
             src="img/album-10.jpg"
             alt="Oscar, carolina y sus hijas"
             loading="lazy"
             style="object-position: 50% 0"
           />
-            <img
+          <img
             class="sl"
             src="img/album-11.jpg"
             alt="Oscar, carolina y sus hijas en una fiestra de graduacion"
             loading="lazy"
             style="object-position: 50% 0"
           />
-           <img
+          <img
             class="sl"
             src="img/album-12.jpg"
             alt="Oscar y carolina en el mar"
             loading="lazy"
             style="object-position: 50% 0"
           />
-           <img
+          <img
             class="sl"
             src="img/album-13.jpg"
             alt="Oscar y carolina abrazados en un background de flamencos"
             loading="lazy"
             style="object-position: 50% 0"
           />
-           <img
+          <img
             class="sl"
             src="img/album-14.jpg"
             alt="Oscar y carolina en su inicio de relacion"
             loading="lazy"
             style="object-position: 50% 0"
           />
-
           <button class="arw" id="prev" aria-label="Foto anterior">‹</button>
           <button class="arw" id="next" aria-label="Foto siguiente">›</button>
         </div>
@@ -1282,185 +1667,25 @@
       <section id="vestimenta">
         <p class="lbl">Código de vestimenta</p>
         <div class="dc">
-          <div>
-            <svg
-              class="fg"
-              viewBox="0 0 180 330"
-              role="img"
-              aria-label="Ilustración editorial de hombre con camisa de manga larga y pantalón"
-            >
-              <defs>
-                <linearGradient id="suitTone" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#d1c3a8" />
-                  <stop offset="1" stop-color="#a99a7c" />
-                </linearGradient>
-                <linearGradient id="shirtTone" x1="0" y1="0" x2="0.9" y2="1">
-                  <stop offset="0" stop-color="#fffdf6" />
-                  <stop offset="1" stop-color="#e8e0cf" />
-                </linearGradient>
-                <linearGradient id="trouserTone" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stop-color="#b5a789" />
-                  <stop offset="1" stop-color="#8d8067" />
-                </linearGradient>
-              </defs>
-              <ellipse
-                cx="90"
-                cy="316"
-                rx="42"
-                ry="5"
-                fill="#8c7958"
-                opacity=".16"
-              />
-              <!-- Cabello, rostro y cuello -->
-              <path
-                d="M70 37C67 15 79 7 93 8c18 1 24 16 18 34l-5 17H73Z"
-                fill="#514334"
-              />
-              <path
-                d="M74 30c1-13 9-19 18-19 12 0 19 8 18 21l-3 22c-3 10-10 16-18 16s-16-7-18-17Z"
-                fill="#e8c9a9"
-                class="outline"
-              />
-              <path
-                d="M71 32c1-16 10-25 23-24 12 1 19 9 19 22-7-2-12-8-15-13-7 8-16 12-27 15Z"
-                fill="#514334"
-              />
-              <path d="M82 43h3m12 0h3" class="detail" />
-              <path d="M88 55q4 3 8 0" class="detail" />
-              <path d="M82 64v15q8 8 16 0V64" fill="#dfb996" class="outline" />
-              <!-- Camisa -->
-              <path
-                d="M78 73 90 83l12-10 14 8-7 39H71l-7-39Z"
-                fill="url(#shirtTone)"
-                class="outline"
-              />
-              <path
-                d="m78 73 12 10-8 18-9-21Zm24 0L90 83l8 18 9-21Z"
-                fill="#f6f1e5"
-                class="outline"
-              />
-              <path
-                d="m87 88 3 7 3-7 4 38H83Z"
-                fill="#8e7550"
-                class="outline"
-              />
-              <!-- Chaqueta y mangas -->
-              <path
-                d="M78 72 63 77Q56 80 52 94L40 151q-2 9 8 13l11 3 12-49-4 78q23 10 46 0l-4-78 12 49 11-3q10-4 8-13l-12-57q-4-14-11-17l-15-5-12 18Z"
-                fill="url(#suitTone)"
-                class="outline"
-              />
-              <path
-                d="m78 72 12 11-12 30-9-35Zm24 0L90 83l12 30 9-35Z"
-                fill="#c5b696"
-                class="outline"
-              />
-              <path d="M90 84v111M78 144h3m18 0h3" class="detail" />
-              <path d="M58 98 49 150m73-52 9 52" class="soft-detail" />
-              <!-- Pantalón -->
-              <path
-                d="M67 196q23 8 46 0l-4 103q-8 5-17 1l-2-76-3 76q-9 4-18-1Z"
-                fill="url(#trouserTone)"
-                class="outline"
-              />
-              <path d="M90 202v21m-17-14-2 82m35-82 2 82" class="detail" />
-              <path
-                d="M71 297q8 5 19 2l3 9q-1 5-26 4-8-1-5-7Zm21 2q10 4 18-1l9 8q2 5-22 6-8 0-8-5Z"
-                fill="#665744"
-                class="outline"
-              />
-            </svg>
+          <div class="dc-card">
+            <img
+              class="dc-figure"
+              src="img/el.png"
+              alt="figura de hombre con camisa manga larga y pantalon beige"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Ellos</h3>
             <p>Camisa de manga larga y pantalón blanco o beige.</p>
           </div>
-          <div>
-            <svg
-              class="fg"
-              viewBox="0 0 180 330"
-              role="img"
-              aria-label="Ilustración editorial de mujer con vestido largo de un solo tono"
-            >
-              <defs>
-                <linearGradient id="dressTone" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#d9c292" />
-                  <stop offset=".55" stop-color="#c2a66e" />
-                  <stop offset="1" stop-color="#a98b59" />
-                </linearGradient>
-                <linearGradient id="hairTone" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#604b38" />
-                  <stop offset="1" stop-color="#392c24" />
-                </linearGradient>
-              </defs>
-              <ellipse
-                cx="90"
-                cy="316"
-                rx="47"
-                ry="5"
-                fill="#8c7958"
-                opacity=".16"
-              />
-              <!-- Cabello y rostro -->
-              <path
-                d="M67 47C61 16 77 5 94 7c20 2 27 19 20 45l-5 50-12 18H69L58 91Z"
-                fill="url(#hairTone)"
-              />
-              <path
-                d="M74 29c2-13 11-19 20-18 12 1 19 10 18 24l-3 23c-3 12-10 18-19 18-8 0-16-8-18-19Z"
-                fill="#e8c9a9"
-                class="outline"
-              />
-              <path
-                d="M72 32C70 15 82 7 94 9c12 1 19 10 19 23-7-2-13-8-16-14-7 9-15 13-25 14Z"
-                fill="#4d3a2d"
-              />
-              <path d="M81 45h3m13 0h3m-11 12q4 3 8 0" class="detail" />
-              <path d="M82 69v13q8 8 16 0V68" fill="#dfb996" class="outline" />
-              <!-- Cabello que cae sobre los hombros -->
-              <path
-                d="M70 31q-6 36-8 71l-3 36q13-5 19-23l4-39Zm43 1q9 35 12 69l5 33q-15-5-21-25l-2-41Z"
-                fill="url(#hairTone)"
-              />
-              <!-- Brazos -->
-              <path
-                d="M73 84q-10 2-14 15l-10 48q-2 9 6 12 8 3 12-7l13-41Zm34 0q10 2 14 15l10 48q2 9-6 12-8 3-12-7l-13-41Z"
-                fill="#e8c9a9"
-                class="outline"
-              />
-              <!-- Vestido de gala, un solo tono -->
-              <path
-                d="M78 80q12 11 24 0l13 9q-1 17-9 36 23 49 36 168-51 24-104 0 13-119 36-168-8-19-9-36Z"
-                fill="url(#dressTone)"
-                class="outline"
-              />
-              <path
-                d="M78 81q12 11 24 0l-5 25H83Z"
-                fill="#ead7ad"
-                class="outline"
-              />
-              <path
-                d="M82 124q-13 55-15 151m24-145q-2 73 0 151m8-157q21 65 29 151"
-                class="soft-detail"
-              />
-              <path d="M69 172q21 10 42 0" class="detail" opacity=".55" />
-              <path
-                d="M42 299q21 9 43 0m-21 8 0 5m25-13q24 9 43 0"
-                class="detail"
-                opacity=".6"
-              />
-              <path
-                d="M69 294q8 4 17 2l2 11q-2 5-24 4-7-1-5-7Zm24 2q9 4 17-1l8 8q2 5-21 6-8 0-8-5Z"
-                fill="#80694b"
-                class="outline"
-              />
-              <!-- Detalle pequeño del peinado -->
-              <path
-                d="M108 28q8 4 10 13"
-                fill="none"
-                stroke="#c4a36a"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
+          <div class="dc-card">
+            <img
+              class="dc-figure"
+              src="img/ella.png"
+              alt="figura de mujer con Vestido largo, en un solo tono."
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Ellas</h3>
             <p>Vestido largo, en un solo tono.</p>
           </div>
@@ -1482,7 +1707,7 @@
       <p class="lbl">Tu presencia es nuestro mejor regalo</p>
       <h2>Confirma tu asistencia</h2>
       <!-- EDITAR-FORM: pega aquí el link del Google Form -->
-      <a class="btn" href="#" target="_blank" rel="noopener"
+      <a class="btn" href="https://forms.gle/2HibUuzYe7uqJR497" target="_blank" rel="noopener"
         >Confirmar en el formulario</a
       >
     </div>
@@ -1505,7 +1730,7 @@
         $$ = (s) => [...document.querySelectorAll(s)];
 
       /* ===== Sonido de apertura: se sintetiza con Web Audio (no necesita archivos) =====
-   Roce de papel al abrir la solapa + campanita suave cuando sale la carta. */
+       Roce de papel al abrir la solapa + campanita suave cuando sale la carta. */
       function sfx() {
         try {
           const A = new (window.AudioContext || window.webkitAudioContext)(),
